@@ -310,6 +310,43 @@ textarea.form-control{min-height:120px;resize:vertical;}
 /* FOOTER */
 footer{background:#08090d;border-top:1px solid var(--border-faint);padding:1.5rem 0;font-size:11px;color:var(--text-dim);letter-spacing:.06em;}
 
+/* RICH FOOTER */
+.footer-rich { background:#08090d; border-top:1px solid var(--border-faint); padding:3rem 0 1.5rem; }
+.footer-logo { font-family:'Syne',sans-serif; font-weight:800; font-size:1.4rem; color:var(--amber); letter-spacing:-0.02em; margin-bottom:.5rem; }
+.footer-tagline { font-size:12px; color:var(--text-dim); line-height:1.7; max-width:260px; }
+.footer-heading { font-family:'Syne',sans-serif; font-weight:700; font-size:.75rem; letter-spacing:.14em; text-transform:uppercase; color:var(--amber); margin-bottom:1rem; }
+.footer-link { display:block; font-size:12px; color:var(--text-dim); text-decoration:none; margin-bottom:.5rem; transition:color .2s; }
+.footer-link:hover { color:var(--amber); padding-left:4px; }
+.footer-bottom { border-top:1px solid var(--border-faint); padding-top:1.2rem; margin-top:2rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:.5rem; }
+.footer-bottom span { font-size:11px; color:var(--text-dim); letter-spacing:.05em; }
+.footer-status { display:inline-flex; align-items:center; gap:6px; font-size:11px; color:#a6e3a1; }
+.footer-status-dot { width:6px; height:6px; border-radius:50%; background:#28c840; box-shadow:0 0 6px rgba(40,200,64,0.8); animation:statusPulse 2s infinite; display:inline-block; }
+
+/* SCROLL TO TOP — enhanced */
+#backToTop { position:fixed; bottom:2rem; left:2rem; width:44px; height:44px; background:var(--amber); color:#08090d; border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:1rem; z-index:999; opacity:0; transform:translateY(16px); transition:opacity .3s, transform .3s, background .2s; font-weight:700; }
+#backToTop.visible { opacity:1; transform:translateY(0); }
+#backToTop:hover { background:#fff; }
+#backToTop .progress-ring { position:absolute; top:0; left:0; width:44px; height:44px; transform:rotate(-90deg); }
+#backToTop .progress-ring circle { fill:none; stroke:rgba(0,0,0,0.2); stroke-width:3; }
+#backToTop .progress-ring .track { stroke:rgba(0,0,0,0.15); }
+#backToTop .progress-ring .fill { stroke:#08090d; stroke-dasharray:132; stroke-dashoffset:132; transition:stroke-dashoffset .1s; }
+
+/* TOOLTIPS on tags */
+.tag[data-tip] { position:relative; cursor:default; }
+.tag[data-tip]:hover::after {
+  content: attr(data-tip);
+  position:absolute; bottom:calc(100% + 8px); left:50%; transform:translateX(-50%);
+  background:#1e1f2e; color:#cdd6f4; border:1px solid var(--border-amber);
+  font-size:10px; line-height:1.5; white-space:nowrap; padding:5px 10px;
+  pointer-events:none; z-index:999; letter-spacing:.03em; font-family:'Fira Code',monospace;
+  box-shadow:0 4px 16px rgba(0,0,0,0.5);
+}
+.tag[data-tip]:hover::before {
+  content:''; position:absolute; bottom:calc(100% + 2px); left:50%; transform:translateX(-50%);
+  border:5px solid transparent; border-top-color:var(--border-amber);
+  pointer-events:none; z-index:999;
+}
+
 /* REVEAL */
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s,transform .7s;}
 .reveal.visible{opacity:1;transform:translateY(0);}
@@ -391,7 +428,10 @@ footer{background:#08090d;border-top:1px solid var(--border-faint);padding:1.5re
 </div>
 
 <!-- BACK TO TOP -->
-<button id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Torna su">↑</button>
+<button id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Torna su">
+  <svg class="progress-ring" viewBox="0 0 44 44"><circle class="track" cx="22" cy="22" r="21"/><circle class="fill" id="scrollRing" cx="22" cy="22" r="21"/></svg>
+  ↑
+</button>
 
 <!-- SIDE DOTS NAV -->
 <div id="sideNav">
@@ -545,22 +585,22 @@ footer{background:#08090d;border-top:1px solid var(--border-faint);padding:1.5re
     </div>
     <div class="row g-0 reveal" style="border:1px solid var(--border-faint);">
       <div class="col-md-6 col-lg-4" style="border-right:1px solid var(--border-faint);border-bottom:1px solid var(--border-faint);">
-        <div class="skill-card"><div class="skill-icon">☕</div><div class="skill-name" data-i18n="sk1.name">Java & Backend</div><div class="skill-desc" data-i18n="sk1.desc">Sviluppo enterprise con Java EE e JEE, multithreading e applicazioni server-side robuste.</div><div class="progress"><div class="progress-bar" data-width="90"></div></div><div class="mt-2"><span class="tag tag-amber">Java EE / JEE</span><span class="tag tag-amber">Java SE</span><span class="tag">Multithreading</span><span class="tag">Maven</span><span class="tag">Tomcat</span></div></div>
+        <div class="skill-card"><div class="skill-icon">☕</div><div class="skill-name" data-i18n="sk1.name">Java & Backend</div><div class="skill-desc" data-i18n="sk1.desc">Sviluppo enterprise con Java EE e JEE, multithreading e applicazioni server-side robuste.</div><div class="progress"><div class="progress-bar" data-width="90"></div></div><div class="mt-2"><span class="tag tag-amber">Java EE / JEE</span><span class="tag tag-amber" data-tip="Java Standard Edition — core del linguaggio">Java SE</span><span class="tag" data-tip="Esecuzione parallela di thread in Java">Multithreading</span><span class="tag" data-tip="Build automation tool per progetti Java">Maven</span><span class="tag" data-tip="Server servlet/JSP container Apache">Tomcat</span></div></div>
       </div>
       <div class="col-md-6 col-lg-4" style="border-right:1px solid var(--border-faint);border-bottom:1px solid var(--border-faint);">
-        <div class="skill-card"><div class="skill-icon">🌐</div><div class="skill-name" data-i18n="sk2.name">Frontend</div><div class="skill-desc" data-i18n="sk2.desc">Sviluppo di interfacce web moderne e responsive con framework e tecnologie standard.</div><div class="progress"><div class="progress-bar" data-width="82"></div></div><div class="mt-2"><span class="tag tag-amber">AngularJS</span><span class="tag tag-amber">JavaScript</span><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">Bootstrap</span></div></div>
+        <div class="skill-card"><div class="skill-icon">🌐</div><div class="skill-name" data-i18n="sk2.name">Frontend</div><div class="skill-desc" data-i18n="sk2.desc">Sviluppo di interfacce web moderne e responsive con framework e tecnologie standard.</div><div class="progress"><div class="progress-bar" data-width="82"></div></div><div class="mt-2"><span class="tag tag-amber" data-tip="Framework JS di Google — SPA frontend">AngularJS</span><span class="tag tag-amber" data-tip="Linguaggio di scripting web universale">JavaScript</span><span class="tag" data-tip="Markup standard per il web moderno">HTML5</span><span class="tag" data-tip="Fogli di stile cascading v3">CSS3</span><span class="tag" data-tip="Framework CSS responsive di Twitter">Bootstrap</span></div></div>
       </div>
       <div class="col-md-6 col-lg-4" style="border-bottom:1px solid var(--border-faint);">
-        <div class="skill-card"><div class="skill-icon">🔷</div><div class="skill-name" data-i18n="sk3.name">Microsoft Stack</div><div class="skill-desc" data-i18n="sk3.desc">Sviluppo di applicazioni enterprise con tecnologie Microsoft, web API e desktop.</div><div class="progress"><div class="progress-bar" data-width="78"></div></div><div class="mt-2"><span class="tag tag-amber">C#</span><span class="tag tag-amber">ASP.NET</span><span class="tag">.NET</span><span class="tag">Visual Basic</span><span class="tag">SoapUI</span></div></div>
+        <div class="skill-card"><div class="skill-icon">🔷</div><div class="skill-name" data-i18n="sk3.name">Microsoft Stack</div><div class="skill-desc" data-i18n="sk3.desc">Sviluppo di applicazioni enterprise con tecnologie Microsoft, web API e desktop.</div><div class="progress"><div class="progress-bar" data-width="78"></div></div><div class="mt-2"><span class="tag tag-amber" data-tip="Linguaggio OOP di Microsoft — .NET ecosystem">C#</span><span class="tag tag-amber" data-tip="Framework web Microsoft per backend">ASP.NET</span><span class="tag" data-tip="Piattaforma Microsoft cross-platform">.NET</span><span class="tag" data-tip="Linguaggio Microsoft legacy enterprise">Visual Basic</span><span class="tag" data-tip="Tool per testing API SOAP/REST">SoapUI</span></div></div>
       </div>
       <div class="col-md-6 col-lg-4" style="border-right:1px solid var(--border-faint);">
-        <div class="skill-card"><div class="skill-icon">🗄️</div><div class="skill-name" data-i18n="sk4.name">Database</div><div class="skill-desc" data-i18n="sk4.desc">Progettazione e gestione di database relazionali su più piattaforme enterprise.</div><div class="progress"><div class="progress-bar" data-width="85"></div></div><div class="mt-2"><span class="tag tag-amber">MySQL</span><span class="tag tag-amber">SQL Server</span><span class="tag">Oracle DB</span><span class="tag">DB2</span><span class="tag">SQL</span></div></div>
+        <div class="skill-card"><div class="skill-icon">🗄️</div><div class="skill-name" data-i18n="sk4.name">Database</div><div class="skill-desc" data-i18n="sk4.desc">Progettazione e gestione di database relazionali su più piattaforme enterprise.</div><div class="progress"><div class="progress-bar" data-width="85"></div></div><div class="mt-2"><span class="tag tag-amber" data-tip="Database open source più diffuso al mondo">MySQL</span><span class="tag tag-amber" data-tip="Database relazionale Microsoft enterprise">SQL Server</span><span class="tag" data-tip="Database enterprise Oracle — alta affidabilità">Oracle DB</span><span class="tag" data-tip="Database relazionale IBM — banking enterprise">DB2</span><span class="tag" data-tip="Structured Query Language per database">SQL</span></div></div>
       </div>
       <div class="col-md-6 col-lg-4" style="border-right:1px solid var(--border-faint);">
-        <div class="skill-card"><div class="skill-icon">🐳</div><div class="skill-name" data-i18n="sk5.name">DevOps & Tools</div><div class="skill-desc" data-i18n="sk5.desc">Containerizzazione, CI/CD e automazione dei processi di sviluppo e deploy.</div><div class="progress"><div class="progress-bar" data-width="72"></div></div><div class="mt-2"><span class="tag tag-amber">Docker</span><span class="tag tag-amber">Jenkins</span><span class="tag">GitLab CI</span><span class="tag">Linux</span><span class="tag">IntelliJ</span></div></div>
+        <div class="skill-card"><div class="skill-icon">🐳</div><div class="skill-name" data-i18n="sk5.name">DevOps & Tools</div><div class="skill-desc" data-i18n="sk5.desc">Containerizzazione, CI/CD e automazione dei processi di sviluppo e deploy.</div><div class="progress"><div class="progress-bar" data-width="72"></div></div><div class="mt-2"><span class="tag tag-amber" data-tip="Containerizzazione per ambienti isolati">Docker</span><span class="tag tag-amber" data-tip="Server CI/CD open source">Jenkins</span><span class="tag" data-tip="Pipeline CI/CD integrata in GitLab">GitLab CI</span><span class="tag" data-tip="Sistema operativo open source">Linux</span><span class="tag">IntelliJ</span></div></div>
       </div>
       <div class="col-md-6 col-lg-4">
-        <div class="skill-card"><div class="skill-icon">🔐</div><div class="skill-name" data-i18n="sk6.name">Networking & Security</div><div class="skill-desc" data-i18n="sk6.desc">Fondamenti di sicurezza informatica, reti Cisco e Internet of Things.</div><div class="progress"><div class="progress-bar" data-width="65"></div></div><div class="mt-2"><span class="tag tag-amber">Cisco CyberSec</span><span class="tag">Network Design</span><span class="tag">IoT</span><span class="tag">PHP</span><span class="tag">C++</span></div></div>
+        <div class="skill-card"><div class="skill-icon">🔐</div><div class="skill-name" data-i18n="sk6.name">Networking & Security</div><div class="skill-desc" data-i18n="sk6.desc">Fondamenti di sicurezza informatica, reti Cisco e Internet of Things.</div><div class="progress"><div class="progress-bar" data-width="65"></div></div><div class="mt-2"><span class="tag tag-amber" data-tip="Certificazione Cisco sulla cybersecurity">Cisco CyberSec</span><span class="tag" data-tip="Progettazione infrastrutture di rete">Network Design</span><span class="tag" data-tip="Internet of Things — dispositivi connessi">IoT</span><span class="tag" data-tip="Linguaggio server-side per il web">PHP</span><span class="tag" data-tip="Linguaggio ad alte prestazioni — low level">C++</span></div></div>
       </div>
     </div>
   </div>
@@ -630,14 +670,14 @@ footer{background:#08090d;border-top:1px solid var(--border-faint);padding:1.5re
           <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:.95rem;color:#e8e6de;">Full Stack Developer</div>
           <div class="exp-date">dic 2024 — Presente · 1 anno 6 mesi</div>
           <p class="exp-desc" data-i18n="e1.desc">Sviluppo di applicazioni full stack nel settore bancario. Backend su Java EE e JEE, frontend con AngularJS. Sistemi enterprise critici per la gestione dossier finanziari e compliance.</p>
-          <div class="mt-2"><span class="tag tag-amber">Java EE</span><span class="tag tag-amber">JEE</span><span class="tag tag-amber">AngularJS</span><span class="tag">DB2</span><span class="tag">Maven</span><span class="tag">IntelliJ IDEA</span></div>
+          <div class="mt-2"><span class="tag tag-amber" data-tip="Java Enterprise Edition — API per app enterprise">Java EE</span><span class="tag tag-amber" data-tip="Jakarta EE — standard enterprise Java moderno">JEE</span><span class="tag tag-amber" data-tip="Framework JS di Google — SPA frontend">AngularJS</span><span class="tag" data-tip="Database relazionale IBM — banking enterprise">DB2</span><span class="tag" data-tip="Build automation tool per progetti Java">Maven</span><span class="tag" data-tip="IDE Java/Kotlin di JetBrains">IntelliJ IDEA</span></div>
         </div>
 
         <div style="margin-top:1.2rem;padding-left:1.2rem;border-left:2px solid var(--border-faint);">
           <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:.95rem;color:#e8e6de;">Junior Full Stack Developer</div>
           <div class="exp-date">mag 2024 — nov 2024 · 7 mesi</div>
           <p class="exp-desc" data-i18n="e2.desc">Onboarding e crescita nel contesto banking enterprise. Prime responsabilità su moduli Java EE e integrazione con sistemi esistenti. Progressione rapida al ruolo senior dopo 7 mesi.</p>
-          <div class="mt-2"><span class="tag">Java EE</span><span class="tag">AngularJS</span><span class="tag">SoapUI</span><span class="tag">DB2</span></div>
+          <div class="mt-2"><span class="tag" data-tip="Java Enterprise Edition — API per app enterprise">Java EE</span><span class="tag" data-tip="Framework JS di Google — SPA frontend">AngularJS</span><span class="tag" data-tip="Tool per testing API SOAP/REST">SoapUI</span><span class="tag" data-tip="Database relazionale IBM — banking enterprise">DB2</span></div>
         </div>
       </div>
 
@@ -651,14 +691,14 @@ footer{background:#08090d;border-top:1px solid var(--border-faint);padding:1.5re
           <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:.95rem;color:#e8e6de;">Junior Full Stack Developer</div>
           <div class="exp-date">mag 2022 — nov 2023 · 1 anno 7 mesi</div>
           <p class="exp-desc" data-i18n="e3.desc">Manutenzione di applicativi esistenti e sviluppo di nuove funzionalità su stack .NET e Java. Applicazioni multi-tier con C#, ASP.NET, SQL Server e Oracle DB.</p>
-          <div class="mt-2"><span class="tag tag-amber">C#</span><span class="tag tag-amber">ASP.NET</span><span class="tag">.NET</span><span class="tag">JavaScript</span><span class="tag">SQL Server</span><span class="tag">Oracle DB</span></div>
+          <div class="mt-2"><span class="tag tag-amber" data-tip="Linguaggio OOP di Microsoft — .NET ecosystem">C#</span><span class="tag tag-amber" data-tip="Framework web Microsoft per backend">ASP.NET</span><span class="tag" data-tip="Piattaforma Microsoft cross-platform">.NET</span><span class="tag" data-tip="Linguaggio di scripting web universale">JavaScript</span><span class="tag" data-tip="Database relazionale Microsoft enterprise">SQL Server</span><span class="tag" data-tip="Database enterprise Oracle — alta affidabilità">Oracle DB</span></div>
         </div>
 
         <div style="margin-top:1.2rem;padding-left:1.2rem;border-left:2px solid var(--border-faint);">
           <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:.95rem;color:#e8e6de;">Sviluppatore Junior · Stage</div>
           <div class="exp-date">nov 2021 — mag 2022 · 7 mesi</div>
           <p class="exp-desc" data-i18n="e4.desc">Stage formativo con introduzione allo sviluppo software professionale. Primo contatto con tecnologie enterprise, Java, .NET e metodologie di lavoro in team.</p>
-          <div class="mt-2"><span class="tag">Java</span><span class="tag">C#</span><span class="tag">JavaScript</span><span class="tag">HTML/CSS</span><span class="tag">MySQL</span></div>
+          <div class="mt-2"><span class="tag">Java</span><span class="tag" data-tip="Linguaggio OOP di Microsoft — .NET ecosystem">C#</span><span class="tag" data-tip="Linguaggio di scripting web universale">JavaScript</span><span class="tag">HTML/CSS</span><span class="tag" data-tip="Database open source più diffuso al mondo">MySQL</span></div>
         </div>
       </div>
 
@@ -674,7 +714,7 @@ footer{background:#08090d;border-top:1px solid var(--border-faint);padding:1.5re
           <div>
             <div class="project-title">I.I.S.S ENRICO MEDI — Galatone</div>
             <div class="exp-role" data-i18n="edu.desc">Diploma in Scienze e Tecnologie Informatiche · set 2016 – giu 2021 · Votazione: 78/100</div>
-            <div class="mt-2"><span class="tag">Java</span><span class="tag">C++</span><span class="tag">PHP</span><span class="tag">HTML/CSS</span><span class="tag">MySQL</span><span class="tag">IoT</span><span class="tag">Reti Cisco</span><span class="tag">Visual Basic</span></div>
+            <div class="mt-2"><span class="tag">Java</span><span class="tag" data-tip="Linguaggio ad alte prestazioni — low level">C++</span><span class="tag" data-tip="Linguaggio server-side per il web">PHP</span><span class="tag">HTML/CSS</span><span class="tag" data-tip="Database open source più diffuso al mondo">MySQL</span><span class="tag" data-tip="Internet of Things — dispositivi connessi">IoT</span><span class="tag">Reti Cisco</span><span class="tag" data-tip="Linguaggio Microsoft legacy enterprise">Visual Basic</span></div>
           </div>
         </div>
       </div>
@@ -1004,10 +1044,48 @@ footer{background:#08090d;border-top:1px solid var(--border-faint);padding:1.5re
   </div>
 </div>
 
-<footer>
-  <div class="container d-flex justify-content-between flex-wrap gap-2">
-    <span>© 2025 Alessandro Stapane</span>
-    <span data-i18n="footer">Galatone → Empoli · Full Stack Developer</span>
+<footer class="footer-rich">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="footer-logo">AS.</div>
+        <div class="footer-tagline">Full Stack Developer appassionato di codice pulito, automazione e finanza personale. Disponibile per opportunità ibride o remote.</div>
+        <div class="d-flex gap-3 mt-3">
+          <a href="https://linkedin.com/in/alessandrostapane" target="_blank" style="color:var(--text-dim);font-size:1.1rem;transition:color .2s;" onmouseover="this.style.color='#f0a500'" onmouseout="this.style.color=''">in</a>
+          <a href="https://github.com/Alw12" target="_blank" style="color:var(--text-dim);font-size:1.1rem;font-family:'Syne',sans-serif;font-weight:700;transition:color .2s;" onmouseover="this.style.color='#f0a500'" onmouseout="this.style.color=''">gh</a>
+          <a href="mailto:stapanealessandro@gmail.com" style="color:var(--text-dim);font-size:1.1rem;transition:color .2s;" onmouseover="this.style.color='#f0a500'" onmouseout="this.style.color=''">@</a>
+        </div>
+      </div>
+      <div class="col-6 col-lg-2">
+        <div class="footer-heading">Navigazione</div>
+        <a href="#about" class="footer-link">Chi sono</a>
+        <a href="#skills" class="footer-link">Skills</a>
+        <a href="#projects" class="footer-link">Progetti</a>
+        <a href="#experience" class="footer-link">Esperienza</a>
+        <a href="#contact" class="footer-link">Contatti</a>
+      </div>
+      <div class="col-6 col-lg-2">
+        <div class="footer-heading">Altro</div>
+        <a href="#certifications" class="footer-link">Certificazioni</a>
+        <a href="#softskills" class="footer-link">Soft Skills</a>
+        <a href="#terminal-section" class="footer-link">Terminale</a>
+        <a href="#contact" class="footer-link">↓ CV</a>
+      </div>
+      <div class="col-lg-4">
+        <div class="footer-heading">Stack principale</div>
+        <div style="font-size:12px;color:var(--text-dim);line-height:2;">
+          Java EE · JEE · AngularJS · C# · ASP.NET<br>
+          DB2 · MySQL · Oracle · SQL Server<br>
+          Docker · Jenkins · GitLab CI · Linux<br>
+          Maven · Tomcat · IntelliJ IDEA
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="footer-year">2025</span> Alessandro Stapane — Galatone → Empoli 🇮🇹</span>
+      <div class="footer-status"><span class="footer-status-dot"></span>Disponibile per nuove opportunità</div>
+      <span style="font-family:'Fira Code',monospace;">&lt;AS /&gt;</span>
+    </div>
   </div>
 </footer>
 
@@ -1152,10 +1230,18 @@ function setLang(l) {
   }, 1800);
 })();
 
+// Footer year
+const fyEl = document.getElementById('footer-year');
+if(fyEl) fyEl.textContent = new Date().getFullYear();
+
 // Scroll progress
 window.addEventListener('scroll',()=>{
   const pct = window.scrollY/(document.body.scrollHeight-window.innerHeight)*100;
   document.getElementById('scrollBar').style.width = pct+'%';
+
+  // Progress ring on back-to-top
+  const ring = document.getElementById('scrollRing');
+  if(ring) ring.style.strokeDashoffset = 132 - (132 * pct / 100);
 
   // Navbar scroll effect
   document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 60);
