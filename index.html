@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Alessandro Stapane — Full Stack Developer</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+CjxyZWN0IHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgcng9IjYiIGZpbGw9IiMwZTEwMTgiLz4KPHJlY3QgeD0iMS41IiB5PSIxLjUiIHdpZHRoPSIyOSIgaGVpZ2h0PSIyOSIgcng9IjUiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2YwYTUwMCIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1kYXNoYXJyYXk9IjQsMiIvPgo8dGV4dCB4PSI0IiB5PSIxNCIgZm9udC1mYW1pbHk9Im1vbm9zcGFjZSIgZm9udC13ZWlnaHQ9IjcwMCIgZm9udC1zaXplPSI5IiBmaWxsPSIjZjBhNTAwIj4mbHQ7QVM8L3RleHQ+Cjx0ZXh0IHg9IjQiIHk9IjI1IiBmb250LWZhbWlseT0ibW9ub3NwYWNlIiBmb250LXdlaWdodD0iNzAwIiBmb250LXNpemU9IjkiIGZpbGw9IiNmMGE1MDAiPi8mZ3Q7PC90ZXh0Pgo8L3N2Zz4=">
 
 <!-- Open Graph -->
 <meta property="og:title" content="Alessandro Stapane — Full Stack Developer">
@@ -282,6 +283,11 @@ a{color:var(--amber);text-decoration:none;}
 .cert-card:hover{background:var(--bg3);border-color:var(--border-amber);}
 .cert-icon{width:38px;height:38px;background:var(--amber-glow);border:1px solid var(--border-amber);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
 .cert-name{font-family:'Syne',sans-serif;font-size:.85rem;font-weight:700;color:#e8e6de;}
+.soft-card{background:var(--bg2);border:1px solid var(--border-faint);padding:1.4rem;display:flex;gap:1rem;height:100%;transition:all .25s;}
+.soft-card:hover{background:var(--bg3);border-color:var(--border-amber);transform:translateY(-3px);}
+.soft-icon{font-size:1.6rem;line-height:1;flex-shrink:0;}
+.soft-name{font-family:'Syne',sans-serif;font-weight:700;font-size:.9rem;color:#e8e6de;margin-bottom:.35rem;}
+.soft-desc{font-size:12px;color:var(--text-muted-custom);line-height:1.8;}
 .cert-issuer{font-size:11px;color:var(--text-dim);margin-top:2px;}
 
 /* CONTACT */
@@ -370,6 +376,7 @@ footer{background:#08090d;border-top:1px solid var(--border-faint);padding:1.5re
   <div class="side-dot" data-target="projects"><span class="dot-label">Progetti</span></div>
   <div class="side-dot" data-target="experience"><span class="dot-label">Esperienza</span></div>
   <div class="side-dot" data-target="certifications"><span class="dot-label">Certificazioni</span></div>
+  <div class="side-dot" data-target="softskills"><span class="dot-label">Soft Skills</span></div>
   <div class="side-dot" data-target="terminal-section"><span class="dot-label">Terminale</span></div>
   <div class="side-dot" data-target="contact"><span class="dot-label">Contatti</span></div>
 </div>
@@ -461,7 +468,7 @@ footer{background:#08090d;border-top:1px solid var(--border-faint);padding:1.5re
         <div class="section-label" data-i18n="about.label">Chi sono</div>
         <h2 class="section-title" data-i18n="about.title">Da Galatone<br>al banking enterprise.</h2>
         <div class="about-body">
-          <p data-i18n="about.p1">Sono un <strong>Full Stack Developer</strong> originario di Galatone (Puglia), attualmente a <strong>Empoli, Toscana</strong> dove lavoro in CABEL nel settore bancario. Lavoro sia su backend enterprise (Java EE, JEE) che su frontend moderno (AngularJS, JavaScript).</p>
+          <p data-i18n="about.p1">Sono un <strong>Full Stack Developer</strong> classe <strong>2002</strong>, originario di Galatone (Puglia), attualmente a <strong>Empoli, Toscana</strong> dove lavoro in CABEL nel settore bancario. Lavoro sia su backend enterprise (Java EE, JEE) che su frontend moderno (AngularJS, JavaScript).</p>
           <p class="mt-3" data-i18n="about.p2">Ho iniziato il mio percorso come stagista in <strong>SEI Consulting</strong> nel 2021, crescendo fino al ruolo di Junior Full Stack Developer per poi approdare in CABEL nel 2024, dove sono diventato <strong>Full Stack Developer</strong> a dicembre dello stesso anno.</p>
           <p class="mt-3" data-i18n="about.p3">Appassionato di <strong>automazione, finanza personale</strong> e progetti open source. Disponibile per opportunità in sede a Lecce, ibrido o full remote.</p>
         </div>
@@ -643,6 +650,72 @@ footer{background:#08090d;border-top:1px solid var(--border-faint);padding:1.5re
             <div class="project-title">I.I.S.S ENRICO MEDI — Galatone</div>
             <div class="exp-role" data-i18n="edu.desc">Diploma in Scienze e Tecnologie Informatiche · set 2016 – giu 2021 · Votazione: 78/100</div>
             <div class="mt-2"><span class="tag">Java</span><span class="tag">C++</span><span class="tag">PHP</span><span class="tag">HTML/CSS</span><span class="tag">MySQL</span><span class="tag">IoT</span><span class="tag">Reti Cisco</span><span class="tag">Visual Basic</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOFT SKILLS -->
+<section class="py-5">
+  <div class="container py-4">
+    <div class="reveal">
+      <div class="section-label" data-i18n="soft.label">Soft Skills</div>
+      <h2 class="section-title" data-i18n="soft.title">Competenze<br>trasversali.</h2>
+    </div>
+    <div class="row g-3 reveal">
+      <div class="col-md-6 col-lg-4">
+        <div class="soft-card">
+          <div class="soft-icon">🧩</div>
+          <div>
+            <div class="soft-name" data-i18n="soft.s1.name">Problem Solving</div>
+            <div class="soft-desc" data-i18n="soft.s1.desc">Approccio analitico ai problemi complessi, capacità di scomporre sfide tecniche in soluzioni concrete e scalabili.</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="soft-card">
+          <div class="soft-icon">🤝</div>
+          <div>
+            <div class="soft-name" data-i18n="soft.s2.name">Teamwork</div>
+            <div class="soft-desc" data-i18n="soft.s2.desc">Esperienza in team agili e cross-funzionali. Collaborazione attiva con colleghi, PM e stakeholder su progetti enterprise.</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="soft-card">
+          <div class="soft-icon">📈</div>
+          <div>
+            <div class="soft-name" data-i18n="soft.s3.name">Continuous Learning</div>
+            <div class="soft-desc" data-i18n="soft.s3.desc">Attitudine costante all'aggiornamento. Corso microservizi Spring Boot/Docker/Kubernetes completato in autonomia.</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="soft-card">
+          <div class="soft-icon">🎯</div>
+          <div>
+            <div class="soft-name" data-i18n="soft.s4.name">Orientamento ai risultati</div>
+            <div class="soft-desc" data-i18n="soft.s4.desc">Focus sulla qualità e sul rispetto delle scadenze. Progressione da stage a Full Stack Developer in meno di 3 anni.</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="soft-card">
+          <div class="soft-icon">💬</div>
+          <div>
+            <div class="soft-name" data-i18n="soft.s5.name">Comunicazione</div>
+            <div class="soft-desc" data-i18n="soft.s5.desc">Capacità di tradurre concetti tecnici per interlocutori non tecnici. Esperienza in contesti cliente e banking.</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="soft-card">
+          <div class="soft-icon">🔄</div>
+          <div>
+            <div class="soft-name" data-i18n="soft.s6.name">Adattabilità</div>
+            <div class="soft-desc" data-i18n="soft.s6.desc">Cresciuto in ambienti diversi — da Gallipoli a Empoli, da .NET a Java EE — mantenendo alta produttività.</div>
           </div>
         </div>
       </div>
@@ -878,6 +951,7 @@ footer{background:#08090d;border-top:1px solid var(--border-faint);padding:1.5re
         <h2 class="section-title" data-i18n="contact.title">Scrivimi.</h2>
         <p class="about-body mb-4" data-i18n="contact.desc">Disponibile per opportunità in sede a Lecce, ibrido o full remote. Aperto a progetti freelance e collaborazioni.</p>
         <a href="mailto:stapanealessandro@gmail.com" class="contact-link"><span>📧 &nbsp; stapanealessandro@gmail.com</span><span class="arrow">→</span></a>
+        <a href="tel:+393338887689" class="contact-link"><span>📱 &nbsp; +39 333 888 7689</span><span class="arrow">→</span></a>
         <a href="https://linkedin.com/in/alessandrostapane" target="_blank" class="contact-link"><span>💼 &nbsp; linkedin.com/in/alessandrostapane</span><span class="arrow">→</span></a>
         <a href="https://github.com/Alw12" target="_blank" class="contact-link"><span>🐙 &nbsp; github.com/Alw12</span><span class="arrow">→</span></a>
       </div>
