@@ -11,6 +11,8 @@
 <meta property="og:description" content="Full Stack Developer con 3+ anni di esperienza. Java EE, AngularJS, C#, Docker. Attualmente in CABEL, Empoli.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://alessandrostapane.vercel.app">
+<meta name="keywords" content="Alessandro Stapane, Full Stack Developer, Java, Java EE, AngularJS, C#, ASP.NET, Docker, Empoli, Galatone, CABEL, sviluppatore web, backend developer, portfolio">
+<meta name="author" content="Alessandro Stapane">
 <meta property="og:image" content="https://alessandrostapane.vercel.app/og-preview.png">
 <meta property="og:locale" content="it_IT">
 <meta name="twitter:card" content="summary_large_image">
@@ -120,9 +122,9 @@ a{color:var(--amber);text-decoration:none;}
 .navbar.scrolled{background:rgba(8,9,13,0.97)!important;border-bottom:1px solid var(--border-amber);box-shadow:0 4px 30px rgba(0,0,0,0.5);padding:.6rem 0;}
 .navbar-brand{font-family:'Syne',sans-serif;font-weight:800;font-size:1.15rem;color:var(--amber)!important;letter-spacing:-0.02em;transition:transform .3s;}
 .navbar.scrolled .navbar-brand{transform:scale(0.92);}
-.nav-link{color:#9a9890!important;font-size:11px;letter-spacing:.1em;text-transform:uppercase;transition:color .2s, border-bottom .2s;padding:.4rem .9rem!important;border-bottom:2px solid transparent;}
+.nav-link{color:#9a9890!important;font-size:11px;letter-spacing:.1em;text-transform:uppercase;transition:color .2s,background .2s,border-bottom .2s;padding:.4rem .9rem!important;border-bottom:2px solid transparent;position:relative;}
 .nav-link:hover{color:var(--amber)!important;}
-.nav-link.active-section{color:var(--amber)!important;border-bottom:2px solid var(--amber);}
+.nav-link.active-section{color:var(--amber)!important;border-bottom:2px solid var(--amber);background:var(--amber-glow);border-radius:4px 4px 0 0;}
 .navbar-toggler{border-color:var(--border-amber);}
 .navbar-toggler-icon{filter:invert(1);}
 
@@ -228,7 +230,7 @@ a{color:var(--amber);text-decoration:none;}
 .photo-wrap{width:100%;position:relative;z-index:10;}
 .photo-wrap img{width:100%;height:auto;display:block;filter:drop-shadow(0 40px 80px rgba(0,0,0,0.5));}
 #skills{position:relative;z-index:1;}
-.about-badge{display:inline-flex;align-items:center;justify-content:center;width:160px;height:52px;background:var(--amber);font-family:'Syne',sans-serif;font-weight:800;font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:#08090d;margin-top:1rem;}
+.about-badge{display:inline-flex;align-items:center;justify-content:center;background:var(--amber);font-family:'Syne',sans-serif;font-weight:800;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:#08090d;padding:.4rem 1.2rem;margin-top:1rem;white-space:nowrap;max-width:100%;}
 .about-body{color:#b0aea6;font-size:13.5px;line-height:1.95;}
 .about-body strong{color:#e8e6de;font-weight:500;}
 .stat-box{background:var(--bg2);border:1px solid var(--border-faint);padding:1.1rem;text-align:center;}
@@ -324,15 +326,38 @@ footer{background:#08090d;border-top:1px solid var(--border-faint);padding:1.5re
 .glitch-wrap::before{animation:glitch1 4s infinite;color:var(--amber);}
 .glitch-wrap::after{animation:glitch2 4s .5s infinite;}
 
-/* KEYFRAMES */
-@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
-@keyframes fadeIn{from{opacity:0}to{opacity:1}}
-@keyframes scrollPulse{0%,100%{opacity:.3}50%{opacity:1}}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-@keyframes borderRun{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
-@keyframes pulseDot{0%,100%{box-shadow:0 0 0 0 rgba(240,165,0,.4)}50%{box-shadow:0 0 0 8px rgba(240,165,0,0)}}
-@keyframes slideIn{from{opacity:0;transform:translateX(-20px)}to{opacity:1;transform:translateX(0)}}
-@keyframes drawLine{from{height:0}to{height:100%}}
+/* NAV LINK CLICK RIPPLE */
+@keyframes navClick { 0%{transform:scale(0);opacity:.4} 100%{transform:scale(2.5);opacity:0} }
+.nav-ripple { position:absolute; width:100%; height:100%; top:0; left:0; border-radius:4px; background:var(--amber-glow); animation:navClick .4s ease forwards; pointer-events:none; }
+
+/* CORE KEYFRAMES */
+@keyframes fadeUp { from{opacity:0;transform:translateY(22px)} to{opacity:1;transform:translateY(0)} }
+@keyframes fadeIn { from{opacity:0} to{opacity:1} }
+@keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+@keyframes borderRun { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+@keyframes pulseDot { 0%,100%{box-shadow:0 0 0 0 rgba(240,165,0,.4)} 50%{box-shadow:0 0 0 8px rgba(240,165,0,0)} }
+@keyframes slideIn { from{opacity:0;transform:translateX(-20px)} to{opacity:1;transform:translateX(0)} }
+@keyframes drawLine { from{height:0} to{height:100%} }
+@keyframes scrollPulse { 0%,100%{opacity:.3} 50%{opacity:1} }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+@keyframes statusPulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+
+/* ACCORDION button arrow color */
+.accordion-button::after { filter:invert(1) sepia(1) saturate(2) hue-rotate(5deg); }
+.accordion-button:not(.collapsed)::after { filter:invert(1) sepia(1) saturate(5) hue-rotate(5deg) brightness(1.2); }
+.accordion-button:not(.collapsed) { color:var(--amber)!important; background:var(--bg3)!important; }
+
+/* MOBILE — terminal hidden, static shown */
+@media (max-width:768px) {
+  #terminal-section { display:none !important; }
+  #terminal-mobile { display:block !important; }
+  #sideNav { display:none; }
+  #backToTop { bottom:1rem; left:1rem; }
+  .about-badge { position:static; margin-top:1rem; border-radius:0; }
+}
+@media (min-width:769px) {
+  #terminal-mobile { display:none !important; }
+}
 </style>
 </head>
 <body>
@@ -658,67 +683,56 @@ footer{background:#08090d;border-top:1px solid var(--border-faint);padding:1.5re
 </section>
 
 <!-- SOFT SKILLS -->
-<section class="py-5">
+<section class="py-5" id="softskills">
   <div class="container py-4">
     <div class="reveal">
       <div class="section-label" data-i18n="soft.label">Soft Skills</div>
       <h2 class="section-title" data-i18n="soft.title">Competenze<br>trasversali.</h2>
     </div>
-    <div class="row g-3 reveal">
-      <div class="col-md-6 col-lg-4">
-        <div class="soft-card">
-          <div class="soft-icon">🧩</div>
-          <div>
-            <div class="soft-name" data-i18n="soft.s1.name">Problem Solving</div>
-            <div class="soft-desc" data-i18n="soft.s1.desc">Approccio analitico ai problemi complessi, capacità di scomporre sfide tecniche in soluzioni concrete e scalabili.</div>
-          </div>
+    <div class="accordion reveal" id="softAccordion" style="border:1px solid var(--border-faint);">
+
+      <div class="accordion-item" style="background:var(--bg2);border:none;border-bottom:1px solid var(--border-faint);">
+        <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#soft1" style="background:var(--bg2);color:#e8e6de;font-family:'Syne',sans-serif;font-weight:700;font-size:.9rem;box-shadow:none;border:none;">🧩 &nbsp;<span data-i18n="soft.s1.name">Problem Solving</span></button></h2>
+        <div id="soft1" class="accordion-collapse collapse" data-bs-parent="#softAccordion">
+          <div class="accordion-body" style="background:var(--bg3);color:var(--text-muted-custom);font-size:13px;line-height:1.85;" data-i18n="soft.s1.desc">Approccio analitico ai problemi complessi, capacità di scomporre sfide tecniche in soluzioni concrete e scalabili.</div>
         </div>
       </div>
-      <div class="col-md-6 col-lg-4">
-        <div class="soft-card">
-          <div class="soft-icon">🤝</div>
-          <div>
-            <div class="soft-name" data-i18n="soft.s2.name">Teamwork</div>
-            <div class="soft-desc" data-i18n="soft.s2.desc">Esperienza in team agili e cross-funzionali. Collaborazione attiva con colleghi, PM e stakeholder su progetti enterprise.</div>
-          </div>
+
+      <div class="accordion-item" style="background:var(--bg2);border:none;border-bottom:1px solid var(--border-faint);">
+        <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#soft2" style="background:var(--bg2);color:#e8e6de;font-family:'Syne',sans-serif;font-weight:700;font-size:.9rem;box-shadow:none;border:none;">🤝 &nbsp;<span data-i18n="soft.s2.name">Teamwork</span></button></h2>
+        <div id="soft2" class="accordion-collapse collapse" data-bs-parent="#softAccordion">
+          <div class="accordion-body" style="background:var(--bg3);color:var(--text-muted-custom);font-size:13px;line-height:1.85;" data-i18n="soft.s2.desc">Esperienza in team agili e cross-funzionali. Collaborazione attiva con colleghi, PM e stakeholder su progetti enterprise.</div>
         </div>
       </div>
-      <div class="col-md-6 col-lg-4">
-        <div class="soft-card">
-          <div class="soft-icon">📈</div>
-          <div>
-            <div class="soft-name" data-i18n="soft.s3.name">Continuous Learning</div>
-            <div class="soft-desc" data-i18n="soft.s3.desc">Attitudine costante all'aggiornamento. Corso microservizi Spring Boot/Docker/Kubernetes completato in autonomia.</div>
-          </div>
+
+      <div class="accordion-item" style="background:var(--bg2);border:none;border-bottom:1px solid var(--border-faint);">
+        <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#soft3" style="background:var(--bg2);color:#e8e6de;font-family:'Syne',sans-serif;font-weight:700;font-size:.9rem;box-shadow:none;border:none;">📈 &nbsp;<span data-i18n="soft.s3.name">Continuous Learning</span></button></h2>
+        <div id="soft3" class="accordion-collapse collapse" data-bs-parent="#softAccordion">
+          <div class="accordion-body" style="background:var(--bg3);color:var(--text-muted-custom);font-size:13px;line-height:1.85;" data-i18n="soft.s3.desc">Attitudine costante all'aggiornamento. Corso microservizi Spring Boot/Docker/Kubernetes completato in autonomia.</div>
         </div>
       </div>
-      <div class="col-md-6 col-lg-4">
-        <div class="soft-card">
-          <div class="soft-icon">🎯</div>
-          <div>
-            <div class="soft-name" data-i18n="soft.s4.name">Orientamento ai risultati</div>
-            <div class="soft-desc" data-i18n="soft.s4.desc">Focus sulla qualità e sul rispetto delle scadenze. Progressione da stage a Full Stack Developer in meno di 3 anni.</div>
-          </div>
+
+      <div class="accordion-item" style="background:var(--bg2);border:none;border-bottom:1px solid var(--border-faint);">
+        <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#soft4" style="background:var(--bg2);color:#e8e6de;font-family:'Syne',sans-serif;font-weight:700;font-size:.9rem;box-shadow:none;border:none;">🎯 &nbsp;<span data-i18n="soft.s4.name">Orientamento ai risultati</span></button></h2>
+        <div id="soft4" class="accordion-collapse collapse" data-bs-parent="#softAccordion">
+          <div class="accordion-body" style="background:var(--bg3);color:var(--text-muted-custom);font-size:13px;line-height:1.85;" data-i18n="soft.s4.desc">Focus sulla qualità e sul rispetto delle scadenze. Progressione da stage a Full Stack Developer in meno di 3 anni.</div>
         </div>
       </div>
-      <div class="col-md-6 col-lg-4">
-        <div class="soft-card">
-          <div class="soft-icon">💬</div>
-          <div>
-            <div class="soft-name" data-i18n="soft.s5.name">Comunicazione</div>
-            <div class="soft-desc" data-i18n="soft.s5.desc">Capacità di tradurre concetti tecnici per interlocutori non tecnici. Esperienza in contesti cliente e banking.</div>
-          </div>
+
+      <div class="accordion-item" style="background:var(--bg2);border:none;border-bottom:1px solid var(--border-faint);">
+        <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#soft5" style="background:var(--bg2);color:#e8e6de;font-family:'Syne',sans-serif;font-weight:700;font-size:.9rem;box-shadow:none;border:none;">💬 &nbsp;<span data-i18n="soft.s5.name">Comunicazione</span></button></h2>
+        <div id="soft5" class="accordion-collapse collapse" data-bs-parent="#softAccordion">
+          <div class="accordion-body" style="background:var(--bg3);color:var(--text-muted-custom);font-size:13px;line-height:1.85;" data-i18n="soft.s5.desc">Capacità di tradurre concetti tecnici per interlocutori non tecnici. Esperienza in contesti cliente e banking.</div>
         </div>
       </div>
-      <div class="col-md-6 col-lg-4">
-        <div class="soft-card">
-          <div class="soft-icon">🔄</div>
-          <div>
-            <div class="soft-name" data-i18n="soft.s6.name">Adattabilità</div>
-            <div class="soft-desc" data-i18n="soft.s6.desc">Cresciuto in ambienti diversi — da Gallipoli a Empoli, da .NET a Java EE — mantenendo alta produttività.</div>
-          </div>
+
+      <div class="accordion-item" style="background:var(--bg2);border:none;">
+        <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#soft6" style="background:var(--bg2);color:#e8e6de;font-family:'Syne',sans-serif;font-weight:700;font-size:.9rem;box-shadow:none;border:none;">🔄 &nbsp;<span data-i18n="soft.s6.name">Adattabilità</span></button></h2>
+        <div id="soft6" class="accordion-collapse collapse" data-bs-parent="#softAccordion">
+          <div class="accordion-body" style="background:var(--bg3);color:var(--text-muted-custom);font-size:13px;line-height:1.85;" data-i18n="soft.s6.desc">Cresciuto in ambienti diversi — da Gallipoli a Empoli, da .NET a Java EE — mantenendo alta produttività.</div>
         </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -743,6 +757,19 @@ footer{background:#08090d;border-top:1px solid var(--border-faint);padding:1.5re
 
 <!-- TERMINAL -->
 <section id="terminal-section" class="py-5" style="background:var(--bg2);">
+
+<!-- MOBILE STATIC VERSION -->
+<div id="terminal-mobile" class="container py-4">
+  <div class="section-label">Info rapide</div>
+  <h2 class="section-title">Chi sono<br>in breve.</h2>
+  <div class="d-flex flex-column gap-2 mt-3">
+    <div class="contact-link" style="cursor:default;"><span>👤 &nbsp; Alessandro Stapane · 23 anni · Empoli</span></div>
+    <div class="contact-link" style="cursor:default;"><span>💼 &nbsp; Full Stack Developer @ CABEL</span></div>
+    <div class="contact-link" style="cursor:default;"><span>🛠 &nbsp; Java EE · AngularJS · C# · Docker</span></div>
+    <div class="contact-link" style="cursor:default;"><span>🎓 &nbsp; IISS E.Medi Galatone · 2021</span></div>
+    <div class="contact-link" style="cursor:default;"><span>📍 &nbsp; Disponibile: Lecce · Ibrido · Remoto</span></div>
+  </div>
+</div>
   <div class="container py-4">
     <div class="reveal">
       <div class="section-label">Interfaccia interattiva</div>
@@ -1514,7 +1541,35 @@ async function handleSend() {
   }
 }
 
-// Live clock — Empoli time (Europe/Rome)
+// Nav click ripple feedback
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', function() {
+    const r = document.createElement('span');
+    r.className = 'nav-ripple';
+    this.appendChild(r);
+    setTimeout(() => r.remove(), 400);
+  });
+});
+
+// Accordion arrow color fix
+document.querySelectorAll('.accordion-button').forEach(btn => {
+  btn.style.setProperty('--bs-accordion-btn-icon', 'none');
+  btn.addEventListener('click', function() {
+    const isOpen = !this.classList.contains('collapsed');
+    this.style.color = isOpen ? 'var(--amber)' : '#e8e6de';
+    this.style.background = isOpen ? 'var(--bg3)' : 'var(--bg2)';
+  });
+});
+// Nav link click ripple feedback
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', function() {
+    const r = document.createElement('span');
+    r.classList.add('nav-ripple');
+    this.appendChild(r);
+    setTimeout(() => r.remove(), 400);
+  });
+});
+
 function updateClock(){
   const t = new Date().toLocaleTimeString('it-IT',{timeZone:'Europe/Rome',hour:'2-digit',minute:'2-digit',second:'2-digit'});
   const el = document.getElementById('clockTime');
