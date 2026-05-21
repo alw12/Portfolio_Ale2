@@ -88,13 +88,11 @@ body.light .tc-gray { color:#888580; }
 .reveal {
   opacity:0;
   transform: translateY(24px);
-  transition: opacity .7s ease, transform .7s cubic-bezier(.4,0,.2,1), clip-path .7s cubic-bezier(.4,0,.2,1);
-  clip-path: inset(0 0 40px 0);
+  transition: opacity .7s ease, transform .7s cubic-bezier(.4,0,.2,1);
 }
 .reveal.visible {
   opacity:1;
   transform: translateY(0);
-  clip-path: inset(0 0 0px 0);
 }
 *{box-sizing:border-box;}
 html{scroll-behavior:smooth;scroll-padding-top:72px;}
