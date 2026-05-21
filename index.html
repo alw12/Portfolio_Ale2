@@ -42,20 +42,84 @@ body.light {
   --border-faint:rgba(0,0,0,0.1);--border-amber:rgba(200,120,0,0.3);
   --amber:#c87800;--amber-dim:#a06000;--amber-glow:rgba(200,120,0,0.1);
 }
-body.light { background:#f5f4f0; color:#1a1a1a; }
-body.light .navbar { background:rgba(245,244,240,0.95)!important; }
-body.light .navbar.scrolled { background:rgba(245,244,240,0.99)!important; }
-body.light .about-body, body.light .exp-desc, body.light .skill-desc, body.light .project-desc { color:#555450; }
-body.light .stat-box, body.light .project-row, body.light .cert-card, body.light .contact-link { background:#eeede9; }
-body.light .skill-card { background:#f5f4f0; }
-body.light .form-control { background:#eeede9!important; color:#1a1a1a!important; }
-body.light #termOutput, body.light #terminal-wrap { background:#f0eee8; }
-body.light .code-card { background:#e8e6e0; }
-body.light footer { background:#f5f4f0; }
-body.light #splash { background:#f5f4f0; }
+body.light {
+  background:#d8d6cf; color:#1a1a1a;
+}
+body.light .hero-h1,
+body.light .hero-h1 span.glitch-wrap,
+body.light .hero-h1 #typeTarget { color:#111010!important; }
+body.light h1,body.light h2,body.light h3,body.light h4,body.light h5,body.light h6,
+body.light .section-title,body.light .hero-h1,body.light .exp-company,
+body.light .project-title,body.light .skill-name,body.light .cert-name,
+body.light .lang-name,body.light .nav-link { color:#111010!important; }
+body.light .nav-link:hover { color:var(--amber)!important; }
+body.light .nav-link.active-section { color:var(--amber)!important; }
+body.light .navbar-brand { color:var(--amber)!important; }
+body.light .navbar { background:rgba(216,214,207,0.95)!important; }
+body.light .navbar.scrolled { background:rgba(216,214,207,0.99)!important; box-shadow:0 4px 20px rgba(0,0,0,0.08); }
+body.light .about-body,body.light .exp-desc,body.light .exp-role,body.light .skill-desc,
+body.light .project-desc,body.light .contact-desc,body.light .hero-desc { color:#444440!important; }
+body.light .section-label { -webkit-text-fill-color:transparent; }
+body.light .stat-box { background:#e8e6e0; }
+body.light .stat-num { color:var(--amber)!important; }
+body.light .stat-lbl { color:#777470!important; }
+body.light .skill-card { background:#eceae5; border-color:rgba(0,0,0,0.1); }
+body.light .skill-card:hover { background:#e6e4de; }
+body.light .skill-desc { color:#555450!important; }
+body.light .project-row { background:#eceae5; border-color:rgba(0,0,0,0.08); }
+body.light .project-row:hover { background:#e6e4de; }
+body.light .project-desc { color:#555450!important; }
+body.light .project-num { color:#c0beb8; }
+body.light .project-tech { color:#888580!important; }
+body.light .cert-card { background:#eceae5; border-color:rgba(0,0,0,0.08); }
+body.light .cert-name { color:#111010!important; }
+body.light .cert-issuer { color:#777470!important; }
+body.light .contact-link { background:#eceae5; color:#444440!important; border-color:rgba(0,0,0,0.1); }
+body.light .contact-link:hover { background:#e0ddd7; }
+body.light .form-control { background:#eceae5!important; color:#1a1a1a!important; border-color:rgba(0,0,0,0.15)!important; }
+body.light .form-label { color:#777470!important; }
+body.light .exp-date { color:var(--amber)!important; }
+body.light .lang-level { color:#777470!important; }
+body.light .lang-pct { color:var(--amber)!important; }
+body.light .tag { color:#555450!important; border-color:rgba(0,0,0,0.15); }
+body.light .tag-amber { color:var(--amber-dim)!important; border-color:rgba(200,120,0,0.3); }
+body.light .badge-amber { color:var(--amber)!important; background:rgba(200,120,0,0.08); }
+body.light .timeline::before { background:rgba(0,0,0,0.12); }
+body.light .timeline-item { border-color:rgba(0,0,0,0.08); }
+body.light .timeline-item::before { background:#f5f4f0; border-color:var(--amber); }
+body.light .code-card { background:#e6e4de; border-color:rgba(0,0,0,0.1); }
+body.light .cm { color:#999690!important; }
+body.light .kw { color:#8855cc!important; }
+body.light .cl { color:#2255aa!important; }
+body.light .str { color:#558800!important; }
+body.light .fn { color:var(--amber)!important; }
+body.light .nu { color:#cc5500!important; }
+body.light #terminal-wrap { background:#e8e6e0; border-color:rgba(200,120,0,0.3); }
+body.light .term-titlebar { background:#dddbd5; }
+body.light #termOutput { background:#e8e6e0; color:#2a2a2a; }
+body.light #termInput { color:#2a2a2a; }
+body.light .tc-text { color:#2a2a2a!important; }
+body.light .tc-gray { color:#777470!important; }
+body.light .tc-dim { color:#aaa8a0!important; }
+body.light .tc-amber { color:var(--amber)!important; }
+body.light .tc-green { color:#226622!important; }
+body.light .tc-blue { color:#224488!important; }
+body.light .tc-purple { color:#663388!important; }
+body.light .tc-yellow { color:#886600!important; }
+body.light .tc-red { color:#aa2222!important; }
+body.light .sbl-ok { color:#226622!important; }
+body.light .sbl-text { color:#666460!important; }
+body.light .sbl-highlight { color:#1a1a1a!important; }
+body.light footer { background:#eceae5; color:#888580!important; }
+body.light #splash { background:#d8d6cf; }
 body.light .splash-ascii { color:var(--amber); }
-body.light .tc-text { color:#2a2a2a; }
-body.light .tc-gray { color:#888580; }
+body.light .splash-name { color:#111010; }
+body.light .splash-role { color:#888580; }
+body.light .splash-boot-line .sbl-text { color:#666460; }
+body.light #backToTop { background:var(--amber); color:#fff; }
+body.light .side-dot { border-color:rgba(200,120,0,0.4); }
+body.light .side-dot.active { background:var(--amber); }
+body.light .dot-label { background:#f5f4f0; color:var(--amber); border-color:rgba(200,120,0,0.3); }
 
 /* THEME TOGGLE BUTTON */
 #themeToggle {
