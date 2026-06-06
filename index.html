@@ -257,8 +257,6 @@ a{color:var(--amber);text-decoration:none;}
 .project-row{background:var(--bg2);border:1px solid var(--border-faint);padding:1.8rem 2rem;transition:background .2s,border-color .2s;margin-bottom:1px;opacity:0;transform:translateX(-20px);}
 .projects-visible .project-row:nth-child(1){animation:slideIn .5s .05s forwards;}
 .projects-visible .project-row:nth-child(2){animation:slideIn .5s .15s forwards;}
-.projects-visible .project-row:nth-child(3){animation:slideIn .5s .25s forwards;}
-.projects-visible .project-row:nth-child(4){animation:slideIn .5s .35s forwards;}
 .project-row:hover{background:var(--bg3);border-color:var(--border-amber);}
 .project-num{font-family:'Syne',sans-serif;font-size:2.2rem;font-weight:800;color:#4a4840;line-height:1;transition:color .2s;}
 .project-row:hover .project-num{color:var(--amber);}
@@ -651,22 +649,6 @@ a:focus-visible,button:focus-visible,[role="button"]:focus-visible,[tabindex]:fo
           <div class="project-title">Jenkins Builder GUI</div>
           <div class="project-desc" data-i18n="p2.desc">Tool di automazione DevOps per esecuzione parallela di job Jenkins, caricamento branch GitLab e creazione automatica issue YouTrack. Disponibile in Python/Tkinter e C#/.NET 8 WinForms.</div>
           <div class="mt-2 d-flex gap-3 flex-wrap"><span class="project-tech">C# · .NET 8 · Python · Jenkins API · GitLab</span><span class="badge-amber">DevOps</span></div>
-        </div>
-      </div></div>
-      <div class="project-row"><div class="d-flex align-items-start gap-4">
-        <div class="project-num">03</div>
-        <div class="flex-grow-1">
-          <div class="project-title">Streamlit Portfolio Dashboard</div>
-          <div class="project-desc" data-i18n="p3.desc">Dashboard web per il tracciamento di investimenti con yfinance, conversione EUR/USD, grafici di asset allocation e storico performance su equity, oro e crypto.</div>
-          <div class="mt-2 d-flex gap-3 flex-wrap"><span class="project-tech">Python · Streamlit · yfinance · Pandas</span><span class="badge-amber" data-i18n="badge.finance">Finanza</span></div>
-        </div>
-      </div></div>
-      <div class="project-row"><div class="d-flex align-items-start gap-4">
-        <div class="project-num">04</div>
-        <div class="flex-grow-1">
-          <div class="project-title">CBL-FINANZADOSSIER Batch System</div>
-          <div class="project-desc" data-i18n="p4.desc">Sistema batch enterprise per archiviazione automatizzata dei log bancari con storicizzaLog(). Correzioni Gson con @SerializedName per parsing JSON case-insensitive su DB2.</div>
-          <div class="mt-2 d-flex gap-3 flex-wrap"><span class="project-tech">Java EE · DB2 · Gson · Maven · Tomcat</span><span class="badge-amber" data-i18n="badge.enterprise">Enterprise</span></div>
         </div>
       </div></div>
     </div>
@@ -1227,7 +1209,7 @@ function setLang(l) {
     { icon:'sbl-ok', label:'OK', text:'Sistema avviato — ', hi:'Portfolio OS v2.0' },
     { icon:'sbl-ok', label:'OK', text:'Caricamento skills — ', hi:'Java EE · AngularJS · C# · Docker' },
     { icon:'sbl-ok', label:'OK', text:'Caricamento esperienza — ', hi:'CABEL · SEI Consulting' },
-    { icon:'sbl-ok', label:'OK', text:'Caricamento progetti — ', hi:'PAC Tracker · Jenkins GUI · Streamlit' },
+    { icon:'sbl-ok', label:'OK', text:'Caricamento progetti — ', hi:'PAC Tracker · Jenkins Builder GUI' },
     { icon:'sbl-warn', label:'~~', text:'Passione per il codice — ', hi:'∞ / ∞' },
     { icon:'sbl-ok', label:'OK', text:'Terminale interattivo — ', hi:'pronto' },
   ];
@@ -1466,9 +1448,7 @@ const termCmds = {
   projects: () => `<div class="term-block">
 <span class="tc-amber" style="font-weight:600">Progetti personali:</span><br><br>
 <span class="tc-purple">01</span> <span class="tc-green">PAC Portfolio Tracker</span>  <span class="tc-gray">Java · Swing · Yahoo Finance · CoinGecko</span><br>
-<span class="tc-purple">02</span> <span class="tc-green">Jenkins Builder GUI  </span>  <span class="tc-gray">C# · .NET 8 · Python · Jenkins API</span><br>
-<span class="tc-purple">03</span> <span class="tc-green">Streamlit Dashboard  </span>  <span class="tc-gray">Python · Streamlit · yfinance · Pandas</span><br>
-<span class="tc-purple">04</span> <span class="tc-green">CBL-FINANZADOSSIER   </span>  <span class="tc-gray">Java EE · DB2 · Gson · Maven</span>
+<span class="tc-purple">02</span> <span class="tc-green">Jenkins Builder GUI  </span>  <span class="tc-gray">C# · .NET 8 · Python · Jenkins API</span>
 </div>`,
 
   education: () => `<div class="term-block">
