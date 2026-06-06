@@ -100,7 +100,7 @@
         <li class="nav-item"><a class="nav-link" href="#contact" data-i18n="nav.contact">Contatti</a></li>
       </ul>
       <div class="d-flex align-items-center gap-2 ms-lg-3 mt-2 mt-lg-0">
-        <div id="navClock"><span class="clock-dot"></span><span id="clockTime">--:--:--</span>&nbsp;🇮🇹</div>
+        <div id="navClock" aria-label="Ora italiana" role="timer"><span class="clock-dot" aria-hidden="true"></span><span id="clockTime">--:--:--</span><span aria-hidden="true">&nbsp;🇮🇹</span></div>
         <div class="lang-switch">
           <button class="lang-btn active" onclick="setLang('it')" id="btn-it" aria-pressed="true" aria-label="Cambia lingua in Italiano">IT</button>
           <div class="lang-divider" aria-hidden="true"></div>
@@ -118,13 +118,13 @@
 <main id="main-content">
 
 <!-- HERO -->
-<section id="hero" class="py-5" style="position:relative;overflow:hidden;">
+<section id="hero" class="py-5" aria-labelledby="hero-heading" style="position:relative;overflow:hidden;">
   <canvas id="particleCanvas" aria-hidden="true" style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;"></canvas>
   <div class="container" style="position:relative;z-index:1;">
     <div class="row align-items-center min-vh-100 py-5">
       <div class="col-lg-6 mb-5 mb-lg-0">
-        <div class="hero-tag"><span class="hero-online"></span><span data-i18n="hero.tag">Disponibile · Lecce | Ibrido | Remoto</span></div>
-        <h1 class="hero-h1">Full Stack<br><span class="glitch-wrap" data-text="Developer"><span id="typeTarget" data-i18n="hero.h1">Developer</span></span><span class="cursor"></span></h1>
+        <div class="hero-tag"><span class="hero-online" aria-hidden="true"></span><span data-i18n="hero.tag">Disponibile · Lecce | Ibrido | Remoto</span></div>
+        <h1 id="hero-heading" class="hero-h1" aria-label="Full Stack Developer">Full Stack<br><span class="glitch-wrap" aria-hidden="true" data-text="Developer"><span id="typeTarget" data-i18n="hero.h1">Developer</span></span><span class="cursor" aria-hidden="true"></span></h1>
         <p class="hero-desc" data-i18n="hero.desc">Full Stack Developer con 3+ anni di esperienza su stack Java EE, .NET e frontend moderno. Attualmente in CABEL — settore banking, Empoli.</p>
         <div class="hero-cta d-flex gap-3 flex-wrap">
           <div class="magnetic-wrap"><a href="#projects" class="btn btn-amber" data-i18n="hero.cta1">Vedi i progetti</a></div>
@@ -139,7 +139,7 @@
             <span class="d2" onclick="macMinimize()" role="button" tabindex="0" aria-label="Minimizza finestra" onkeydown="if(event.key==='Enter')macMinimize()">−</span>
             <span class="d3" onclick="macMaximize()" role="button" tabindex="0" aria-label="Espandi finestra" onkeydown="if(event.key==='Enter')macMaximize()">+</span>
           </div>
-          <div class="code-content">
+          <div class="code-content" aria-hidden="true">
             <span class="cm">// Alessandro Stapane</span><br>
             <span class="kw">public class</span> <span class="cl">Developer</span> {<br>
             &nbsp;&nbsp;<span class="kw">private final</span> <span class="cl">String</span> role = <span class="str">"Full Stack Dev"</span>;<br>
@@ -161,7 +161,7 @@
 </section>
 
 <!-- ABOUT -->
-<section id="about" class="py-5">
+<section id="about" class="py-5" aria-labelledby="about-heading">
   <div class="container py-4">
     <div class="row align-items-center g-5 reveal">
       <div class="col-lg-4 text-center">
@@ -170,7 +170,7 @@
       </div>
       <div class="col-lg-8" style="padding-top:1rem;">
         <div class="section-label" data-i18n="about.label">Chi sono</div>
-        <h2 class="section-title" data-i18n="about.title">Da Galatone<br>al banking enterprise.</h2>
+        <h2 id="about-heading" class="section-title" data-i18n="about.title">Da Galatone<br>al banking enterprise.</h2>
         <div class="about-body">
           <p data-i18n="about.p1">Sono un <strong>Full Stack Developer</strong> classe <strong>2002</strong>, originario di Galatone (Puglia), attualmente a <strong>Empoli, Toscana</strong> dove lavoro in CABEL nel settore bancario. Lavoro sia su backend enterprise (Java EE, JEE) che su frontend moderno (AngularJS, JavaScript).</p>
           <p class="mt-3" data-i18n="about.p2">Ho iniziato il mio percorso come stagista in <strong>SEI Consulting</strong> nel 2021, crescendo fino al ruolo di Junior Full Stack Developer per poi approdare in CABEL nel 2024, dove sono diventato <strong>Full Stack Developer</strong> a dicembre dello stesso anno.</p>
@@ -192,8 +192,8 @@
                 <div class="lang-name">Italiano</div>
                 <div class="lang-level" data-i18n="lang.it">Madrelingua</div>
               </div>
-              <div class="lang-bar-wrap"><div class="lang-bar" data-width="100"></div></div>
-              <div class="lang-pct">C2</div>
+              <div class="lang-bar-wrap"><div class="lang-bar" data-width="100" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" aria-label="Italiano: livello C2 — 100%"></div></div>
+              <div class="lang-pct" aria-hidden="true">C2</div>
             </div>
             <div class="lang-card">
               <div class="lang-flag">🇬🇧</div>
@@ -201,8 +201,8 @@
                 <div class="lang-name">Inglese</div>
                 <div class="lang-level" data-i18n="lang.en">Conoscenza professionale · B2</div>
               </div>
-              <div class="lang-bar-wrap"><div class="lang-bar" data-width="65"></div></div>
-              <div class="lang-pct">B2</div>
+              <div class="lang-bar-wrap"><div class="lang-bar" data-width="65" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" aria-label="Inglese: livello B2 — 65%"></div></div>
+              <div class="lang-pct" aria-hidden="true">B2</div>
             </div>
           </div>
         </div>
@@ -216,41 +216,41 @@
 </section>
 
 <!-- SKILLS -->
-<section id="skills" class="bg-dark2 py-5">
+<section id="skills" class="bg-dark2 py-5" aria-labelledby="skills-heading">
   <div class="container py-4">
     <div class="reveal">
       <div class="section-label" data-i18n="skills.label">Stack tecnico</div>
-      <h2 class="section-title" data-i18n="skills.title">Competenze &amp;<br>tecnologie.</h2>
+      <h2 id="skills-heading" class="section-title" data-i18n="skills.title">Competenze &amp;<br>tecnologie.</h2>
     </div>
     <div class="row g-0 reveal" style="border:1px solid var(--border-faint);">
       <div class="col-md-6 col-lg-4" style="border-right:1px solid var(--border-faint);border-bottom:1px solid var(--border-faint);">
-        <div class="skill-card"><div class="skill-icon">☕</div><div class="skill-name" data-i18n="sk1.name">Java & Backend</div><div class="skill-desc" data-i18n="sk1.desc">Sviluppo enterprise con Java EE e JEE, multithreading e applicazioni server-side robuste.</div><div class="progress"><div class="progress-bar" data-width="90"></div></div><div class="mt-2"><span class="tag tag-amber">Java EE / JEE</span><span class="tag tag-amber" data-tip="Java Standard Edition — core del linguaggio">Java SE</span><span class="tag" data-tip="Esecuzione parallela di thread in Java">Multithreading</span><span class="tag" data-tip="Build automation tool per progetti Java">Maven</span><span class="tag" data-tip="Server servlet/JSP container Apache">Tomcat</span></div></div>
+        <div class="skill-card"><div class="skill-icon" aria-hidden="true">☕</div><div class="skill-name" data-i18n="sk1.name">Java & Backend</div><div class="skill-desc" data-i18n="sk1.desc">Sviluppo enterprise con Java EE e JEE, multithreading e applicazioni server-side robuste.</div><div class="progress"><div class="progress-bar" data-width="90" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="Livello Java & Backend: 90%"></div></div><div class="mt-2"><span class="tag tag-amber">Java EE / JEE</span><span class="tag tag-amber" data-tip="Java Standard Edition — core del linguaggio">Java SE</span><span class="tag" data-tip="Esecuzione parallela di thread in Java">Multithreading</span><span class="tag" data-tip="Build automation tool per progetti Java">Maven</span><span class="tag" data-tip="Server servlet/JSP container Apache">Tomcat</span></div></div>
       </div>
       <div class="col-md-6 col-lg-4" style="border-right:1px solid var(--border-faint);border-bottom:1px solid var(--border-faint);">
-        <div class="skill-card"><div class="skill-icon">🌐</div><div class="skill-name" data-i18n="sk2.name">Frontend</div><div class="skill-desc" data-i18n="sk2.desc">Sviluppo di interfacce web moderne e responsive con framework e tecnologie standard.</div><div class="progress"><div class="progress-bar" data-width="82"></div></div><div class="mt-2"><span class="tag tag-amber" data-tip="Framework JS di Google — SPA frontend">AngularJS</span><span class="tag tag-amber" data-tip="Linguaggio di scripting web universale">JavaScript</span><span class="tag" data-tip="Markup standard per il web moderno">HTML5</span><span class="tag" data-tip="Fogli di stile cascading v3">CSS3</span><span class="tag" data-tip="Framework CSS responsive di Twitter">Bootstrap</span></div></div>
+        <div class="skill-card"><div class="skill-icon" aria-hidden="true">🌐</div><div class="skill-name" data-i18n="sk2.name">Frontend</div><div class="skill-desc" data-i18n="sk2.desc">Sviluppo di interfacce web moderne e responsive con framework e tecnologie standard.</div><div class="progress"><div class="progress-bar" data-width="82" role="progressbar" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100" aria-label="Livello Frontend: 82%"></div></div><div class="mt-2"><span class="tag tag-amber" data-tip="Framework JS di Google — SPA frontend">AngularJS</span><span class="tag tag-amber" data-tip="Linguaggio di scripting web universale">JavaScript</span><span class="tag" data-tip="Markup standard per il web moderno">HTML5</span><span class="tag" data-tip="Fogli di stile cascading v3">CSS3</span><span class="tag" data-tip="Framework CSS responsive di Twitter">Bootstrap</span></div></div>
       </div>
       <div class="col-md-6 col-lg-4" style="border-bottom:1px solid var(--border-faint);">
-        <div class="skill-card"><div class="skill-icon">🔷</div><div class="skill-name" data-i18n="sk3.name">Microsoft Stack</div><div class="skill-desc" data-i18n="sk3.desc">Sviluppo di applicazioni enterprise con tecnologie Microsoft, web API e desktop.</div><div class="progress"><div class="progress-bar" data-width="78"></div></div><div class="mt-2"><span class="tag tag-amber" data-tip="Linguaggio OOP di Microsoft — .NET ecosystem">C#</span><span class="tag tag-amber" data-tip="Framework web Microsoft per backend">ASP.NET</span><span class="tag" data-tip="Piattaforma Microsoft cross-platform">.NET</span><span class="tag" data-tip="Linguaggio Microsoft legacy enterprise">Visual Basic</span><span class="tag" data-tip="Tool per testing API SOAP/REST">SoapUI</span></div></div>
+        <div class="skill-card"><div class="skill-icon" aria-hidden="true">🔷</div><div class="skill-name" data-i18n="sk3.name">Microsoft Stack</div><div class="skill-desc" data-i18n="sk3.desc">Sviluppo di applicazioni enterprise con tecnologie Microsoft, web API e desktop.</div><div class="progress"><div class="progress-bar" data-width="78" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100" aria-label="Livello Microsoft Stack: 78%"></div></div><div class="mt-2"><span class="tag tag-amber" data-tip="Linguaggio OOP di Microsoft — .NET ecosystem">C#</span><span class="tag tag-amber" data-tip="Framework web Microsoft per backend">ASP.NET</span><span class="tag" data-tip="Piattaforma Microsoft cross-platform">.NET</span><span class="tag" data-tip="Linguaggio Microsoft legacy enterprise">Visual Basic</span><span class="tag" data-tip="Tool per testing API SOAP/REST">SoapUI</span></div></div>
       </div>
       <div class="col-md-6 col-lg-4" style="border-right:1px solid var(--border-faint);">
-        <div class="skill-card"><div class="skill-icon">🗄️</div><div class="skill-name" data-i18n="sk4.name">Database</div><div class="skill-desc" data-i18n="sk4.desc">Progettazione e gestione di database relazionali su più piattaforme enterprise.</div><div class="progress"><div class="progress-bar" data-width="85"></div></div><div class="mt-2"><span class="tag tag-amber" data-tip="Database open source più diffuso al mondo">MySQL</span><span class="tag tag-amber" data-tip="Database relazionale Microsoft enterprise">SQL Server</span><span class="tag" data-tip="Database enterprise Oracle — alta affidabilità">Oracle DB</span><span class="tag" data-tip="Database relazionale IBM — banking enterprise">DB2</span><span class="tag" data-tip="Structured Query Language per database">SQL</span></div></div>
+        <div class="skill-card"><div class="skill-icon" aria-hidden="true">🗄️</div><div class="skill-name" data-i18n="sk4.name">Database</div><div class="skill-desc" data-i18n="sk4.desc">Progettazione e gestione di database relazionali su più piattaforme enterprise.</div><div class="progress"><div class="progress-bar" data-width="85" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="Livello Database: 85%"></div></div><div class="mt-2"><span class="tag tag-amber" data-tip="Database open source più diffuso al mondo">MySQL</span><span class="tag tag-amber" data-tip="Database relazionale Microsoft enterprise">SQL Server</span><span class="tag" data-tip="Database enterprise Oracle — alta affidabilità">Oracle DB</span><span class="tag" data-tip="Database relazionale IBM — banking enterprise">DB2</span><span class="tag" data-tip="Structured Query Language per database">SQL</span></div></div>
       </div>
       <div class="col-md-6 col-lg-4" style="border-right:1px solid var(--border-faint);">
-        <div class="skill-card"><div class="skill-icon">🐳</div><div class="skill-name" data-i18n="sk5.name">DevOps & Tools</div><div class="skill-desc" data-i18n="sk5.desc">Containerizzazione, CI/CD e automazione dei processi di sviluppo e deploy.</div><div class="progress"><div class="progress-bar" data-width="72"></div></div><div class="mt-2"><span class="tag tag-amber" data-tip="Containerizzazione per ambienti isolati">Docker</span><span class="tag tag-amber" data-tip="Server CI/CD open source">Jenkins</span><span class="tag" data-tip="Pipeline CI/CD integrata in GitLab">GitLab CI</span><span class="tag" data-tip="Sistema operativo open source">Linux</span><span class="tag">IntelliJ</span></div></div>
+        <div class="skill-card"><div class="skill-icon" aria-hidden="true">🐳</div><div class="skill-name" data-i18n="sk5.name">DevOps & Tools</div><div class="skill-desc" data-i18n="sk5.desc">Containerizzazione, CI/CD e automazione dei processi di sviluppo e deploy.</div><div class="progress"><div class="progress-bar" data-width="72" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100" aria-label="Livello DevOps & Tools: 72%"></div></div><div class="mt-2"><span class="tag tag-amber" data-tip="Containerizzazione per ambienti isolati">Docker</span><span class="tag tag-amber" data-tip="Server CI/CD open source">Jenkins</span><span class="tag" data-tip="Pipeline CI/CD integrata in GitLab">GitLab CI</span><span class="tag" data-tip="Sistema operativo open source">Linux</span><span class="tag">IntelliJ</span></div></div>
       </div>
       <div class="col-md-6 col-lg-4">
-        <div class="skill-card"><div class="skill-icon">🔐</div><div class="skill-name" data-i18n="sk6.name">Networking & Security</div><div class="skill-desc" data-i18n="sk6.desc">Fondamenti di sicurezza informatica, reti Cisco e Internet of Things.</div><div class="progress"><div class="progress-bar" data-width="65"></div></div><div class="mt-2"><span class="tag tag-amber" data-tip="Certificazione Cisco sulla cybersecurity">Cisco CyberSec</span><span class="tag" data-tip="Progettazione infrastrutture di rete">Network Design</span><span class="tag" data-tip="Internet of Things — dispositivi connessi">IoT</span><span class="tag" data-tip="Linguaggio server-side per il web">PHP</span><span class="tag" data-tip="Linguaggio ad alte prestazioni — low level">C++</span></div></div>
+        <div class="skill-card"><div class="skill-icon" aria-hidden="true">🔐</div><div class="skill-name" data-i18n="sk6.name">Networking & Security</div><div class="skill-desc" data-i18n="sk6.desc">Fondamenti di sicurezza informatica, reti Cisco e Internet of Things.</div><div class="progress"><div class="progress-bar" data-width="65" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" aria-label="Livello Networking & Security: 65%"></div></div><div class="mt-2"><span class="tag tag-amber" data-tip="Certificazione Cisco sulla cybersecurity">Cisco CyberSec</span><span class="tag" data-tip="Progettazione infrastrutture di rete">Network Design</span><span class="tag" data-tip="Internet of Things — dispositivi connessi">IoT</span><span class="tag" data-tip="Linguaggio server-side per il web">PHP</span><span class="tag" data-tip="Linguaggio ad alte prestazioni — low level">C++</span></div></div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- PROJECTS -->
-<section id="projects" class="py-5">
+<section id="projects" class="py-5" aria-labelledby="projects-heading">
   <div class="container py-4">
     <div class="reveal">
       <div class="section-label" data-i18n="projects.label">Cosa ho costruito</div>
-      <h2 class="section-title" data-i18n="projects.title">Progetti<br>personali.</h2>
+      <h2 id="projects-heading" class="section-title" data-i18n="projects.title">Progetti<br>personali.</h2>
     </div>
     <div class="reveal">
       <div class="project-row"><div class="d-flex align-items-start gap-4">
@@ -274,17 +274,17 @@
 </section>
 
 <!-- EXPERIENCE -->
-<section id="experience" class="bg-dark2 py-5">
+<section id="experience" class="bg-dark2 py-5" aria-labelledby="experience-heading">
   <div class="container py-4">
     <div class="reveal">
       <div class="section-label" data-i18n="exp.label">Percorso professionale</div>
-      <h2 class="section-title" data-i18n="exp.title">Esperienza.</h2>
+      <h2 id="experience-heading" class="section-title" data-i18n="exp.title">Esperienza.</h2>
     </div>
     <div class="reveal">
-    <div class="timeline">
+    <div class="timeline" role="list">
 
       <!-- CABEL raggruppato -->
-      <div class="timeline-item">
+      <div class="timeline-item" role="listitem">
         <div class="exp-date">mag 2024 — Presente · 2 anni 1 mese</div>
         <div class="exp-company">CABEL</div>
         <div class="exp-role">Empoli, Toscana · Ibrido</div>
@@ -305,7 +305,7 @@
       </div>
 
       <!-- SEI Consulting raggruppato -->
-      <div class="timeline-item">
+      <div class="timeline-item" role="listitem">
         <div class="exp-date">nov 2021 — nov 2023 · 2 anni 1 mese</div>
         <div class="exp-company">SEI Consulting</div>
         <div class="exp-role">Gallipoli, Puglia · In sede</div>
@@ -333,7 +333,7 @@
       <div class="section-label" data-i18n="edu.label">Formazione</div>
       <div class="project-row" style="opacity:1;transform:none;">
         <div class="d-flex align-items-start gap-4">
-          <div style="font-size:2rem;">🎓</div>
+          <div style="font-size:2rem;" aria-hidden="true">🎓</div>
           <div>
             <div class="project-title">I.I.S.S ENRICO MEDI — Galatone</div>
             <div class="exp-role" data-i18n="edu.desc">Diploma in Scienze e Tecnologie Informatiche · set 2016 – giu 2021 · Votazione: 78/100</div>
@@ -346,51 +346,51 @@
 </section>
 
 <!-- SOFT SKILLS -->
-<section class="py-5" id="softskills">
+<section class="py-5" id="softskills" aria-labelledby="softskills-heading">
   <div class="container py-4">
     <div class="reveal">
       <div class="section-label" data-i18n="soft.label">Soft Skills</div>
-      <h2 class="section-title" data-i18n="soft.title">Competenze<br>trasversali.</h2>
+      <h2 id="softskills-heading" class="section-title" data-i18n="soft.title">Competenze<br>trasversali.</h2>
     </div>
     <div class="accordion reveal" id="softAccordion" style="border:1px solid var(--border-faint);">
 
       <div class="accordion-item" style="background:var(--bg2);border:none;border-bottom:1px solid var(--border-faint);">
-        <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#soft1" style="background:var(--bg2);color:#e8e6de;font-family:'Syne',sans-serif;font-weight:700;font-size:.9rem;box-shadow:none;border:none;">🧩 &nbsp;<span data-i18n="soft.s1.name">Problem Solving</span></button></h2>
+        <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#soft1" aria-controls="soft1" style="background:var(--bg2);color:#e8e6de;font-family:'Syne',sans-serif;font-weight:700;font-size:.9rem;box-shadow:none;border:none;"><span aria-hidden="true">🧩 &nbsp;</span><span data-i18n="soft.s1.name">Problem Solving</span></button></h2>
         <div id="soft1" class="accordion-collapse collapse" data-bs-parent="#softAccordion">
           <div class="accordion-body" style="background:var(--bg3);color:var(--text-muted-custom);font-size:13px;line-height:1.85;" data-i18n="soft.s1.desc">Approccio analitico ai problemi complessi, capacità di scomporre sfide tecniche in soluzioni concrete e scalabili.</div>
         </div>
       </div>
 
       <div class="accordion-item" style="background:var(--bg2);border:none;border-bottom:1px solid var(--border-faint);">
-        <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#soft2" style="background:var(--bg2);color:#e8e6de;font-family:'Syne',sans-serif;font-weight:700;font-size:.9rem;box-shadow:none;border:none;">🤝 &nbsp;<span data-i18n="soft.s2.name">Teamwork</span></button></h2>
+        <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#soft2" aria-controls="soft2" style="background:var(--bg2);color:#e8e6de;font-family:'Syne',sans-serif;font-weight:700;font-size:.9rem;box-shadow:none;border:none;"><span aria-hidden="true">🤝 &nbsp;</span><span data-i18n="soft.s2.name">Teamwork</span></button></h2>
         <div id="soft2" class="accordion-collapse collapse" data-bs-parent="#softAccordion">
           <div class="accordion-body" style="background:var(--bg3);color:var(--text-muted-custom);font-size:13px;line-height:1.85;" data-i18n="soft.s2.desc">Esperienza in team agili e cross-funzionali. Collaborazione attiva con colleghi, PM e stakeholder su progetti enterprise.</div>
         </div>
       </div>
 
       <div class="accordion-item" style="background:var(--bg2);border:none;border-bottom:1px solid var(--border-faint);">
-        <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#soft3" style="background:var(--bg2);color:#e8e6de;font-family:'Syne',sans-serif;font-weight:700;font-size:.9rem;box-shadow:none;border:none;">📈 &nbsp;<span data-i18n="soft.s3.name">Continuous Learning</span></button></h2>
+        <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#soft3" aria-controls="soft3" style="background:var(--bg2);color:#e8e6de;font-family:'Syne',sans-serif;font-weight:700;font-size:.9rem;box-shadow:none;border:none;"><span aria-hidden="true">📈 &nbsp;</span><span data-i18n="soft.s3.name">Continuous Learning</span></button></h2>
         <div id="soft3" class="accordion-collapse collapse" data-bs-parent="#softAccordion">
           <div class="accordion-body" style="background:var(--bg3);color:var(--text-muted-custom);font-size:13px;line-height:1.85;" data-i18n="soft.s3.desc">Attitudine costante all'aggiornamento. Corso microservizi Spring Boot/Docker/Kubernetes completato in autonomia.</div>
         </div>
       </div>
 
       <div class="accordion-item" style="background:var(--bg2);border:none;border-bottom:1px solid var(--border-faint);">
-        <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#soft4" style="background:var(--bg2);color:#e8e6de;font-family:'Syne',sans-serif;font-weight:700;font-size:.9rem;box-shadow:none;border:none;">🎯 &nbsp;<span data-i18n="soft.s4.name">Orientamento ai risultati</span></button></h2>
+        <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#soft4" aria-controls="soft4" style="background:var(--bg2);color:#e8e6de;font-family:'Syne',sans-serif;font-weight:700;font-size:.9rem;box-shadow:none;border:none;"><span aria-hidden="true">🎯 &nbsp;</span><span data-i18n="soft.s4.name">Orientamento ai risultati</span></button></h2>
         <div id="soft4" class="accordion-collapse collapse" data-bs-parent="#softAccordion">
           <div class="accordion-body" style="background:var(--bg3);color:var(--text-muted-custom);font-size:13px;line-height:1.85;" data-i18n="soft.s4.desc">Focus sulla qualità e sul rispetto delle scadenze. Progressione da stage a Full Stack Developer in meno di 3 anni.</div>
         </div>
       </div>
 
       <div class="accordion-item" style="background:var(--bg2);border:none;border-bottom:1px solid var(--border-faint);">
-        <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#soft5" style="background:var(--bg2);color:#e8e6de;font-family:'Syne',sans-serif;font-weight:700;font-size:.9rem;box-shadow:none;border:none;">💬 &nbsp;<span data-i18n="soft.s5.name">Comunicazione</span></button></h2>
+        <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#soft5" aria-controls="soft5" style="background:var(--bg2);color:#e8e6de;font-family:'Syne',sans-serif;font-weight:700;font-size:.9rem;box-shadow:none;border:none;"><span aria-hidden="true">💬 &nbsp;</span><span data-i18n="soft.s5.name">Comunicazione</span></button></h2>
         <div id="soft5" class="accordion-collapse collapse" data-bs-parent="#softAccordion">
           <div class="accordion-body" style="background:var(--bg3);color:var(--text-muted-custom);font-size:13px;line-height:1.85;" data-i18n="soft.s5.desc">Capacità di tradurre concetti tecnici per interlocutori non tecnici. Esperienza in contesti cliente e banking.</div>
         </div>
       </div>
 
       <div class="accordion-item" style="background:var(--bg2);border:none;">
-        <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#soft6" style="background:var(--bg2);color:#e8e6de;font-family:'Syne',sans-serif;font-weight:700;font-size:.9rem;box-shadow:none;border:none;">🔄 &nbsp;<span data-i18n="soft.s6.name">Adattabilità</span></button></h2>
+        <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#soft6" aria-controls="soft6" style="background:var(--bg2);color:#e8e6de;font-family:'Syne',sans-serif;font-weight:700;font-size:.9rem;box-shadow:none;border:none;"><span aria-hidden="true">🔄 &nbsp;</span><span data-i18n="soft.s6.name">Adattabilità</span></button></h2>
         <div id="soft6" class="accordion-collapse collapse" data-bs-parent="#softAccordion">
           <div class="accordion-body" style="background:var(--bg3);color:var(--text-muted-custom);font-size:13px;line-height:1.85;" data-i18n="soft.s6.desc">Cresciuto in ambienti diversi — da Gallipoli a Empoli, da .NET a Java EE — mantenendo alta produttività.</div>
         </div>
@@ -401,25 +401,25 @@
 </section>
 
 <!-- CERTIFICATIONS -->
-<section id="certifications" class="py-5">
+<section id="certifications" class="py-5" aria-labelledby="certifications-heading">
   <div class="container py-4">
     <div class="reveal">
       <div class="section-label" data-i18n="cert.label">Licenze e certificazioni</div>
-      <h2 class="section-title" data-i18n="cert.title">Certificazioni.</h2>
+      <h2 id="certifications-heading" class="section-title" data-i18n="cert.title">Certificazioni.</h2>
     </div>
     <div class="row g-2 reveal">
-      <div class="col-md-6 col-lg-4"><div class="cert-card"><div class="cert-icon">🔐</div><div><div class="cert-name">Cisco CyberSecurity</div><div class="cert-issuer">Cisco Networking Academy · dic 2020</div></div></div></div>
-      <div class="col-md-6 col-lg-4"><div class="cert-card"><div class="cert-icon">🐧</div><div><div class="cert-name">NDG Linux Unhatched</div><div class="cert-issuer">Cisco Networking Academy · nov 2019</div></div></div></div>
-      <div class="col-md-6 col-lg-4"><div class="cert-card"><div class="cert-icon">🌐</div><div><div class="cert-name">Get Connected</div><div class="cert-issuer">Cisco Networking Academy · gen 2019</div></div></div></div>
-      <div class="col-md-6 col-lg-4"><div class="cert-card"><div class="cert-icon">📊</div><div><div class="cert-name">Google Analytics Academy</div><div class="cert-issuer">Google · mag 2020</div></div></div></div>
-      <div class="col-md-6 col-lg-4"><div class="cert-card"><div class="cert-icon">🇬🇧</div><div><div class="cert-name">Badge Lingua Inglese B2</div><div class="cert-issuer">INVALSIopen · giu 2021</div></div></div></div>
+      <div class="col-md-6 col-lg-4"><div class="cert-card"><div class="cert-icon" aria-hidden="true">🔐</div><div><div class="cert-name">Cisco CyberSecurity</div><div class="cert-issuer">Cisco Networking Academy · dic 2020</div></div></div></div>
+      <div class="col-md-6 col-lg-4"><div class="cert-card"><div class="cert-icon" aria-hidden="true">🐧</div><div><div class="cert-name">NDG Linux Unhatched</div><div class="cert-issuer">Cisco Networking Academy · nov 2019</div></div></div></div>
+      <div class="col-md-6 col-lg-4"><div class="cert-card"><div class="cert-icon" aria-hidden="true">🌐</div><div><div class="cert-name">Get Connected</div><div class="cert-issuer">Cisco Networking Academy · gen 2019</div></div></div></div>
+      <div class="col-md-6 col-lg-4"><div class="cert-card"><div class="cert-icon" aria-hidden="true">📊</div><div><div class="cert-name">Google Analytics Academy</div><div class="cert-issuer">Google · mag 2020</div></div></div></div>
+      <div class="col-md-6 col-lg-4"><div class="cert-card"><div class="cert-icon" aria-hidden="true">🇬🇧</div><div><div class="cert-name">Badge Lingua Inglese B2</div><div class="cert-issuer">INVALSIopen · giu 2021</div></div></div></div>
 
     </div>
   </div>
 </section>
 
 <!-- TERMINAL -->
-<section id="terminal-section" class="py-5" style="background:var(--bg2);">
+<section id="terminal-section" class="py-5" aria-labelledby="terminal-heading" style="background:var(--bg2);">
 
 <!-- MOBILE STATIC VERSION -->
 <div id="terminal-mobile" class="container py-4">
@@ -436,12 +436,12 @@
   <div class="container py-4">
     <div class="reveal">
       <div class="section-label">Interfaccia interattiva</div>
-      <h2 class="section-title">Conosci<br>Alessandro.</h2>
+      <h2 id="terminal-heading" class="section-title">Conosci<br>Alessandro.</h2>
       <p style="color:#9a9890;font-size:13px;margin-bottom:2rem;">Digita <code style="color:var(--amber);background:var(--bg3);padding:2px 8px;border:1px solid var(--border-amber);">help</code> per vedere i comandi disponibili.</p>
     </div>
     <div class="reveal" id="terminal-wrap">
       <!-- title bar -->
-      <div class="term-titlebar">
+      <div class="term-titlebar" aria-hidden="true">
         <div class="term-dots">
           <span class="tdot td-red"></span>
           <span class="tdot td-yellow"></span>
@@ -454,13 +454,13 @@
         <div style="width:52px;"></div>
       </div>
       <!-- output -->
-      <div id="termOutput"></div>
+      <div id="termOutput" role="log" aria-live="polite" aria-label="Output del terminale interattivo"></div>
       <!-- input row -->
       <div class="term-input-row">
-        <span class="term-prompt">
+        <span class="term-prompt" aria-hidden="true">
           <span class="tp-user">alex</span><span class="tp-at">@</span><span class="tp-host">portfolio</span><span class="tp-sep">:</span><span class="tp-path">~</span><span class="tp-dollar">$</span>
         </span>
-        <input id="termInput" type="text" autocomplete="off" spellcheck="false" placeholder="digita un comando...">
+        <input id="termInput" type="text" autocomplete="off" spellcheck="false" placeholder="digita un comando..." aria-label="Terminale: digita un comando (digita 'help' per l'elenco)">
       </div>
       <!-- resize handle -->
       <div id="termResize" title="Ridimensiona">
@@ -476,12 +476,12 @@
 
 
 <!-- CONTACT -->
-<section id="contact" class="bg-dark2 py-5">
+<section id="contact" class="bg-dark2 py-5" aria-labelledby="contact-heading">
   <div class="container py-4">
     <div class="row g-5 reveal">
       <div class="col-lg-5">
         <div class="section-label" data-i18n="contact.label">Parliamo</div>
-        <h2 class="section-title" data-i18n="contact.title">Scrivimi.</h2>
+        <h2 id="contact-heading" class="section-title" data-i18n="contact.title">Scrivimi.</h2>
         <p class="about-body mb-4" data-i18n="contact.desc">Disponibile per opportunità in sede a Lecce, ibrido o full remote. Aperto a progetti freelance e collaborazioni.</p>
         <a href="mailto:stapanealessandro@gmail.com" class="contact-link" aria-label="Invia email a stapanealessandro@gmail.com"><span>📧 &nbsp; stapanealessandro@gmail.com</span><span class="arrow" aria-hidden="true">→</span></a>
         <div class="contact-link" style="cursor:pointer;" onclick="revealPhone(this)" role="button" tabindex="0" aria-label="Mostra numero di telefono" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();revealPhone(this);}">
@@ -493,7 +493,8 @@
       </div>
       <div class="col-lg-7">
         <div id="form-success" role="alert" aria-live="assertive" style="display:none;padding:1rem 1.5rem;background:var(--bg3);border:1px solid #a6e3a1;color:#a6e3a1;font-size:13px;margin-bottom:1rem;">✓ Messaggio inviato! Ti risponderò presto.</div>
-        <div class="mb-3"><label class="form-label" for="cf_name" data-i18n="cf.name">Nome</label><input id="cf_name" type="text" class="form-control" data-i18n-placeholder="cf.name.ph" placeholder="Il tuo nome" required aria-required="true"></div>
+        <div id="form-error" role="alert" aria-live="assertive" class="sr-only"></div>
+        <div class="mb-3"><label class="form-label" for="cf_name" data-i18n="cf.name">Nome</label><input id="cf_name" type="text" class="form-control" data-i18n-placeholder="cf.name.ph" placeholder="Il tuo nome" required aria-required="true" autocomplete="name"></div>
         <div class="mb-3"><label class="form-label" for="cf_email" data-i18n="cf.email">Email</label><input id="cf_email" type="email" class="form-control" placeholder="stapanealessandro@gmail.com" required aria-required="true" autocomplete="email"></div>
         <div class="mb-3"><label class="form-label" for="cf_message" data-i18n="cf.msg">Messaggio</label><textarea id="cf_message" class="form-control" data-i18n-placeholder="cf.msg.ph" placeholder="Di cosa vuoi parlarmi?" required aria-required="true"></textarea></div>
         <button type="button" class="btn btn-amber" id="send-btn" onclick="handleSend()" data-i18n="cf.send">Invia messaggio</button>
@@ -519,9 +520,9 @@
         <div class="footer-logo">AS.</div>
         <div class="footer-tagline">Full Stack Developer appassionato di codice pulito, automazione e finanza personale. Disponibile per opportunità ibride o remote.</div>
         <div class="d-flex gap-3 mt-3">
-          <a href="https://linkedin.com/in/alessandrostapane" target="_blank" style="color:var(--text-dim);font-size:1.1rem;transition:color .2s;" onmouseover="this.style.color='#f0a500'" onmouseout="this.style.color=''">in</a>
-          <a href="https://github.com/Alw12" target="_blank" style="color:var(--text-dim);font-size:1.1rem;font-family:'Syne',sans-serif;font-weight:700;transition:color .2s;" onmouseover="this.style.color='#f0a500'" onmouseout="this.style.color=''">gh</a>
-          <a href="mailto:stapanealessandro@gmail.com" style="color:var(--text-dim);font-size:1.1rem;transition:color .2s;" onmouseover="this.style.color='#f0a500'" onmouseout="this.style.color=''">@</a>
+          <a href="https://linkedin.com/in/alessandrostapane" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn di Alessandro Stapane (apre in nuova scheda)" style="color:var(--text-dim);font-size:1.1rem;transition:color .2s;" onmouseover="this.style.color='#f0a500'" onmouseout="this.style.color=''"><span aria-hidden="true">in</span></a>
+          <a href="https://github.com/Alw12" target="_blank" rel="noopener noreferrer" aria-label="GitHub di Alessandro Stapane (apre in nuova scheda)" style="color:var(--text-dim);font-size:1.1rem;font-family:'Syne',sans-serif;font-weight:700;transition:color .2s;" onmouseover="this.style.color='#f0a500'" onmouseout="this.style.color=''"><span aria-hidden="true">gh</span></a>
+          <a href="mailto:stapanealessandro@gmail.com" aria-label="Invia email a stapanealessandro@gmail.com" style="color:var(--text-dim);font-size:1.1rem;transition:color .2s;" onmouseover="this.style.color='#f0a500'" onmouseout="this.style.color=''"><span aria-hidden="true">@</span></a>
         </div>
       </div>
       <div class="col-6 col-lg-2">
@@ -551,12 +552,34 @@
     </div>
     <div class="footer-bottom">
       <span>© <span id="footer-year">2025</span> Alessandro Stapane — Galatone → Empoli 🇮🇹</span>
-      <div class="footer-status"><span class="footer-status-dot"></span>Disponibile per nuove opportunità</div>
+      <div class="footer-status"><span class="footer-status-dot" aria-hidden="true"></span>Disponibile per nuove opportunità</div>
       <span style="font-family:'Fira Code',monospace;">&lt;AS /&gt;</span>
     </div>
   </div>
 </footer>
 
+
+<!-- ACCESSIBILITY WIDGET -->
+<div id="a11y-sr" role="status" aria-live="polite" aria-atomic="true"></div>
+<div id="a11y-widget" role="region" aria-label="Strumenti di accessibilità">
+  <button id="a11y-toggle" aria-expanded="false" aria-controls="a11y-panel"
+          aria-label="Apri strumenti di accessibilità" title="Accessibilità">
+    &#9855;
+  </button>
+  <div id="a11y-panel" role="group" aria-labelledby="a11y-panel-title" hidden>
+    <p id="a11y-panel-title">Accessibilità</p>
+    <button class="a11y-btn" id="btn-hc" aria-pressed="false"
+            aria-label="Attiva alto contrasto">&#9681; Alto Contrasto</button>
+    <button class="a11y-btn" id="btn-cb" aria-pressed="false"
+            aria-label="Attiva modalità daltonico">&#11042; Daltonico</button>
+    <div class="a11y-font-row" role="group" aria-label="Dimensione testo">
+      <button class="a11y-btn" id="btn-f-up"   aria-label="Aumenta testo">A+</button>
+      <button class="a11y-btn" id="btn-f-down" aria-label="Diminuisci testo">A-</button>
+    </div>
+    <div id="a11y-font-indicator" aria-live="polite" aria-atomic="true">Testo: normale</div>
+    <button class="a11y-btn" id="btn-a11y-reset" aria-label="Ripristina accessibilità">&#8635; Ripristina</button>
+  </div>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="js/translations.js"></script>
