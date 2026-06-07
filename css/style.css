@@ -501,10 +501,7 @@ html.a11y-high-contrast #a11y-toggle{background:#ffff00;color:#000;}
 .gh-card{background:var(--bg3);border:1px solid var(--border-faint);padding:1.25rem;transition:border-color .2s;}
 .gh-card:hover{border-color:var(--border-amber);}
 .gh-card-header{display:flex;align-items:center;gap:.6rem;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--text-dim);margin-bottom:1rem;padding-bottom:.75rem;border-bottom:1px solid var(--border-faint);}
-.gh-heatmap{width:100%;overflow:hidden;margin-bottom:.75rem;min-height:88px;display:flex;align-items:center;}
-.gh-heatmap svg{width:100%;height:auto;}
-.gh-loading{font-size:11px;color:var(--text-dim);font-family:'JetBrains Mono',monospace;animation:pulse 1.5s infinite;}
-@keyframes pulse{0%,100%{opacity:.4}50%{opacity:1}}
+.gh-heatmap{width:100%;overflow:hidden;margin-bottom:.75rem;min-height:88px;}
 .gh-legend{display:flex;align-items:center;gap:3px;margin-bottom:.75rem;}
 .gh-legend-cell{width:10px;height:10px;border-radius:2px;display:inline-block;}
 .gh-stats-row{display:flex;align-items:center;border-top:1px solid var(--border-faint);padding-top:.85rem;}
