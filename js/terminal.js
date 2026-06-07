@@ -168,7 +168,8 @@ const termCmds = {
 <span class="tc-amber">  |      |]</span><br>
 <span class="tc-amber">  \\      /</span><br>
 <span class="tc-amber">   '----'</span><br><br>
-<span class="tc-green">☕ Caffè pronto. Ora si può programmare.</span>
+<span class="tc-green">☕ Caffè pronto. Ora si può programmare.</span><br><br>
+<span class="tc-gray">Se ti è piaciuto il portfolio →</span> <a href="https://buymeacoffee.com/alessandrostapane" target="_blank" rel="noopener noreferrer" style="color:#f0a500;text-decoration:underline;">buymeacoffee.com/alessandrostapane</a>
 </div>`,
 
   ls: () => `<div class="term-block">
