@@ -62,7 +62,7 @@ window.addEventListener('scroll',()=>{
   btn.classList.toggle('visible', window.scrollY > 400);
 
   // Scroll spy — navbar + side dots
-  const sections = ['hero','about','skills','tools','projects','experience','certifications','terminal-section','contact'];
+  const sections = ['hero','about','skills','tools','days','projects','experience','certifications','terminal-section','contact'];
   let current = 'hero';
   sections.forEach(id => {
     const el = document.getElementById(id);

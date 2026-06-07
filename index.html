@@ -78,6 +78,7 @@
   <div class="side-dot" data-target="about" role="button" tabindex="0" aria-label="Vai a Chi sono"><span class="dot-label" aria-hidden="true">Chi sono</span></div>
   <div class="side-dot" data-target="skills" role="button" tabindex="0" aria-label="Vai a Skills"><span class="dot-label" aria-hidden="true">Skills</span></div>
   <div class="side-dot" data-target="tools" role="button" tabindex="0" aria-label="Vai a Tools"><span class="dot-label" aria-hidden="true">Tools</span></div>
+  <div class="side-dot" data-target="days" role="button" tabindex="0" aria-label="Vai a Days I Code"><span class="dot-label" aria-hidden="true">Days</span></div>
   <div class="side-dot" data-target="projects" role="button" tabindex="0" aria-label="Vai a Progetti"><span class="dot-label" aria-hidden="true">Progetti</span></div>
   <div class="side-dot" data-target="experience" role="button" tabindex="0" aria-label="Vai a Esperienza"><span class="dot-label" aria-hidden="true">Esperienza</span></div>
   <div class="side-dot" data-target="certifications" role="button" tabindex="0" aria-label="Vai a Certificazioni"><span class="dot-label" aria-hidden="true">Certificazioni</span></div>
@@ -252,89 +253,91 @@
   </div>
 </section>
 
-<!-- TOOLS & DAYS I CODE -->
+<!-- TOOLS I USE -->
 <section id="tools" class="bg-dark2 py-5" aria-labelledby="tools-heading">
   <div class="container py-4">
     <div class="reveal">
       <div class="section-label" data-i18n="tools.label">Strumenti</div>
-      <h2 id="tools-heading" class="section-title" data-i18n="tools.title">Tools I use &amp;<br>Days I code.</h2>
+      <h2 id="tools-heading" class="section-title" data-i18n="tools.title">Tools I use.</h2>
     </div>
+    <div class="row g-4 reveal mt-1">
+      <div class="col-sm-6 col-lg-3">
+        <div class="tool-group-title">IDE</div>
+        <div class="d-flex gap-2 flex-wrap">
+          <span class="tool-tag"><span aria-hidden="true">🧠</span> IntelliJ IDEA</span>
+          <span class="tool-tag"><span aria-hidden="true">💻</span> VS Code</span>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <div class="tool-group-title">Version Control</div>
+        <div class="d-flex gap-2 flex-wrap">
+          <span class="tool-tag"><span aria-hidden="true">🌿</span> Git</span>
+          <span class="tool-tag"><span aria-hidden="true">🦊</span> GitLab</span>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <div class="tool-group-title">DevOps / CI·CD</div>
+        <div class="d-flex gap-2 flex-wrap">
+          <span class="tool-tag"><span aria-hidden="true">🐳</span> Docker</span>
+          <span class="tool-tag"><span aria-hidden="true">⚙️</span> Jenkins</span>
+          <span class="tool-tag"><span aria-hidden="true">🔄</span> GitLab CI</span>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <div class="tool-group-title">Build & Test</div>
+        <div class="d-flex gap-2 flex-wrap">
+          <span class="tool-tag"><span aria-hidden="true">📦</span> Maven</span>
+          <span class="tool-tag"><span aria-hidden="true">🔌</span> SoapUI</span>
+          <span class="tool-tag"><span aria-hidden="true">🐱</span> Tomcat</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <div class="row g-5 reveal mt-1">
-
-      <!-- LEFT: Tool groups -->
-      <div class="col-lg-5">
-        <div class="tool-group">
-          <div class="tool-group-title">IDE</div>
-          <div class="d-flex gap-2 flex-wrap">
-            <span class="tool-tag"><span aria-hidden="true">🧠</span> IntelliJ IDEA</span>
-            <span class="tool-tag"><span aria-hidden="true">💻</span> VS Code</span>
-          </div>
+<!-- DAYS I CODE -->
+<section id="days" class="py-5" aria-labelledby="days-heading">
+  <div class="container py-4">
+    <div class="reveal">
+      <div class="section-label" data-i18n="days.label">Attività GitHub</div>
+      <h2 id="days-heading" class="section-title" data-i18n="days.title">Days I code.</h2>
+    </div>
+    <div class="reveal mt-3">
+      <div class="gh-card">
+        <div class="gh-card-header">
+          <span aria-hidden="true">🐙</span>
+          <span>github.com/<strong style="color:#e8e6de;">Alw12</strong></span>
+          <span id="gh-year" aria-hidden="true" style="margin-left:auto;"></span>
         </div>
-        <div class="tool-group">
-          <div class="tool-group-title">Version Control</div>
-          <div class="d-flex gap-2 flex-wrap">
-            <span class="tool-tag"><span aria-hidden="true">🌿</span> Git</span>
-            <span class="tool-tag"><span aria-hidden="true">🦊</span> GitLab</span>
-          </div>
+        <div class="gh-heatmap" id="ghHeatmap" aria-label="GitHub contribution heatmap" role="img">
+          <div class="gh-loading" id="ghLoading">Caricamento contributi…</div>
         </div>
-        <div class="tool-group">
-          <div class="tool-group-title">DevOps / CI·CD</div>
-          <div class="d-flex gap-2 flex-wrap">
-            <span class="tool-tag"><span aria-hidden="true">🐳</span> Docker</span>
-            <span class="tool-tag"><span aria-hidden="true">⚙️</span> Jenkins</span>
-            <span class="tool-tag"><span aria-hidden="true">🔄</span> GitLab CI</span>
-          </div>
+        <div class="gh-legend" aria-hidden="true">
+          <span style="color:var(--text-dim);font-size:10px;">Meno</span>
+          <span class="gh-legend-cell" style="background:#1a1c26;"></span>
+          <span class="gh-legend-cell" style="background:#3d2b00;"></span>
+          <span class="gh-legend-cell" style="background:#7a5500;"></span>
+          <span class="gh-legend-cell" style="background:#b37d00;"></span>
+          <span class="gh-legend-cell" style="background:#f0a500;"></span>
+          <span style="color:var(--text-dim);font-size:10px;">Più</span>
         </div>
-        <div class="tool-group">
-          <div class="tool-group-title">Build & Test</div>
-          <div class="d-flex gap-2 flex-wrap">
-            <span class="tool-tag"><span aria-hidden="true">📦</span> Maven</span>
-            <span class="tool-tag"><span aria-hidden="true">🔌</span> SoapUI</span>
-            <span class="tool-tag"><span aria-hidden="true">🐱</span> Tomcat</span>
+        <div class="gh-stats-row">
+          <div class="gh-stat">
+            <span class="gh-stat-num" id="ghDays">—</span>
+            <span class="gh-stat-lbl" data-i18n="days.stat1">Giorni attivi</span>
+          </div>
+          <div class="gh-stat-sep" aria-hidden="true"></div>
+          <div class="gh-stat">
+            <span class="gh-stat-num" id="ghCommits">—</span>
+            <span class="gh-stat-lbl" data-i18n="days.stat2">Contributi</span>
+          </div>
+          <div class="gh-stat-sep" aria-hidden="true"></div>
+          <div class="gh-stat">
+            <span class="gh-stat-num">4+</span>
+            <span class="gh-stat-lbl" data-i18n="days.stat3">Anni attivo</span>
           </div>
         </div>
       </div>
-
-      <!-- RIGHT: GitHub card -->
-      <div class="col-lg-7">
-        <div class="gh-card">
-          <div class="gh-card-header">
-            <span aria-hidden="true">🐙</span>
-            <span>github.com/<strong style="color:#e8e6de;">Alw12</strong></span>
-            <span id="gh-year" aria-hidden="true" style="margin-left:auto;"></span>
-          </div>
-          <div class="gh-heatmap" id="ghHeatmap" aria-label="GitHub contribution heatmap" role="img">
-            <div class="gh-loading" id="ghLoading">Caricamento contributi…</div>
-          </div>
-          <div class="gh-legend" aria-hidden="true">
-            <span style="color:var(--text-dim);font-size:10px;">Meno</span>
-            <span class="gh-legend-cell" style="background:#1a1c26;"></span>
-            <span class="gh-legend-cell" style="background:#3d2b00;"></span>
-            <span class="gh-legend-cell" style="background:#7a5500;"></span>
-            <span class="gh-legend-cell" style="background:#b37d00;"></span>
-            <span class="gh-legend-cell" style="background:#f0a500;"></span>
-            <span style="color:var(--text-dim);font-size:10px;">Più</span>
-          </div>
-          <div class="gh-stats-row">
-            <div class="gh-stat">
-              <span class="gh-stat-num" id="ghDays">—</span>
-              <span class="gh-stat-lbl" data-i18n="tools.stat1">Giorni attivi</span>
-            </div>
-            <div class="gh-stat-sep" aria-hidden="true"></div>
-            <div class="gh-stat">
-              <span class="gh-stat-num" id="ghCommits">—</span>
-              <span class="gh-stat-lbl" data-i18n="tools.stat2">Contributi</span>
-            </div>
-            <div class="gh-stat-sep" aria-hidden="true"></div>
-            <div class="gh-stat">
-              <span class="gh-stat-num">4+</span>
-              <span class="gh-stat-lbl" data-i18n="tools.stat3">Anni attivo</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
