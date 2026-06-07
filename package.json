@@ -3,11 +3,14 @@
   "version": "1.0.0",
   "scripts": {
     "deploy": "./deploy.sh",
-    "build": "npm run build:clean && npm run build:copy && npm run build:css && npm run build:js && npm run build:html",
+    "build": "npm run build:clean && npm run build:img && npm run build:css && npm run build:js && npm run build:html",
     "build:clean": "rm -rf dist && mkdir -p dist/css dist/js dist/assets/img",
-    "build:copy": "cp assets/img/profile.jpg dist/assets/img/",
+    "build:img": "node scripts/build-images.js",
     "build:css": "npx clean-css-cli -o dist/css/style.css css/style.css && npx clean-css-cli -o dist/css/terminal.css css/terminal.css",
     "build:js": "npx terser js/main.js -o dist/js/main.js -c -m && npx terser js/terminal.js -o dist/js/terminal.js -c -m && npx terser js/translations.js -o dist/js/translations.js -c -m",
     "build:html": "npx html-minifier-terser --collapse-whitespace --remove-comments --minify-css true --minify-js true -o dist/index.html index.html && npx html-minifier-terser --collapse-whitespace --remove-comments --minify-css true -o dist/privacy-policy.html privacy-policy.html"
+  },
+  "devDependencies": {
+    "sharp": "^0.33.5"
   }
 }

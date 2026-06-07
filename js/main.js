@@ -27,9 +27,15 @@
     }, 150 + i * 300);
   });
 
-  setTimeout(() => {
-    document.getElementById('splash').classList.add('hidden');
-  }, 1800);
+  const BOOT_MS = 1800;
+  const splashEl = document.getElementById('splash');
+  function hideSplash() { if(splashEl) splashEl.classList.add('hidden'); }
+  const splashFailsafe = setTimeout(hideSplash, 2500);
+  window.addEventListener('load', () => {
+    const remaining = Math.max(0, BOOT_MS - performance.now());
+    clearTimeout(splashFailsafe);
+    setTimeout(hideSplash, remaining);
+  });
 })();
 
 // Footer year
