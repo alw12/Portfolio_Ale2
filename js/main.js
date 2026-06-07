@@ -150,24 +150,85 @@ function scramble(el){const o=el.innerText;let f=0;const t=setInterval(()=>{el.i
 const scObs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){scramble(x.target);scObs.unobserve(x.target);}}),{threshold:.5});
 document.querySelectorAll('.section-title').forEach(e=>scObs.observe(e));
 
-// Days I code counter
+// GitHub contributions heatmap + stats
 (function(){
-  const el = document.getElementById('daysCount');
-  if(!el) return;
-  const days = Math.floor((new Date() - new Date('2021-11-01')) / 86400000);
-  const obs = new IntersectionObserver((entries, o) => {
-    entries.forEach(e => {
-      if(!e.isIntersecting) return;
-      let n = 0; const inc = days / (1000/16);
-      const t = setInterval(() => {
-        n += inc;
-        if(n >= days) { el.textContent = days+'+'; clearInterval(t); }
-        else el.textContent = Math.floor(n)+'+';
-      }, 16);
-      o.unobserve(e.target);
+  const wrap   = document.getElementById('ghHeatmap');
+  const daysEl = document.getElementById('ghDays');
+  const comEl  = document.getElementById('ghCommits');
+  const yearEl = document.getElementById('gh-year');
+  const loadEl = document.getElementById('ghLoading');
+  if(!wrap) return;
+
+  const COLORS = ['#1a1c26','#3d2b00','#7a5500','#b37d00','#f0a500'];
+  const GH_USER = 'Alw12';
+
+  function animNum(el, target) {
+    if(!el) return;
+    let n = 0; const inc = target / (700/16);
+    const t = setInterval(() => {
+      n += inc;
+      if(n >= target) { el.textContent = target+'+'; clearInterval(t); }
+      else el.textContent = Math.floor(n)+'+';
+    }, 16);
+  }
+
+  function renderHeatmap(contributions) {
+    if(loadEl) loadEl.remove();
+    const last = contributions.slice(-364);
+    const weeks = [];
+    for(let i = 0; i < last.length; i += 7) weeks.push(last.slice(i, i+7));
+
+    const W = 11, G = 2;
+    const svgW = weeks.length * (W + G);
+    const svgH = 7 * (W + G);
+    const ns = 'http://www.w3.org/2000/svg';
+    const svg = document.createElementNS(ns, 'svg');
+    svg.setAttribute('viewBox', `0 0 ${svgW} ${svgH}`);
+    svg.setAttribute('aria-hidden', 'true');
+
+    weeks.forEach((week, wi) => {
+      week.forEach((day, di) => {
+        const rect = document.createElementNS(ns, 'rect');
+        rect.setAttribute('x', wi * (W + G));
+        rect.setAttribute('y', di * (W + G));
+        rect.setAttribute('width', W);
+        rect.setAttribute('height', W);
+        rect.setAttribute('rx', 2);
+        rect.setAttribute('fill', COLORS[day.level ?? 0]);
+        if(day.count > 0) {
+          const title = document.createElementNS(ns, 'title');
+          title.textContent = `${day.date}: ${day.count}`;
+          rect.appendChild(title);
+        }
+        svg.appendChild(rect);
+      });
     });
-  }, { threshold: .5 });
-  obs.observe(el);
+    wrap.appendChild(svg);
+  }
+
+  const obs = new IntersectionObserver((entries, o) => {
+    if(!entries[0].isIntersecting) return;
+    o.unobserve(wrap);
+
+    fetch(`https://github-contributions-api.jogruber.de/v4/${GH_USER}?y=last`)
+      .then(r => r.json())
+      .then(data => {
+        const c = data.contributions || [];
+        const activeDays  = c.filter(d => d.count > 0).length;
+        const totalCommits = c.reduce((s, d) => s + d.count, 0);
+        const yr = c.length ? c[c.length-1].date.slice(0,4) : new Date().getFullYear();
+        if(yearEl) yearEl.textContent = yr;
+        renderHeatmap(c);
+        animNum(daysEl,  activeDays);
+        animNum(comEl,   totalCommits);
+      })
+      .catch(() => {
+        if(loadEl) loadEl.textContent = 'github.com/'+GH_USER;
+        if(daysEl)  daysEl.textContent  = '—';
+        if(comEl)   comEl.textContent   = '—';
+      });
+  }, { threshold: 0.1 });
+  obs.observe(wrap);
 })();
 
 // Typewriter — chiamato da hideSplash() dopo la scomparsa dello splash
