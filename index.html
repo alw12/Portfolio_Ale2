@@ -497,6 +497,10 @@
         <div class="mb-3"><label class="form-label" for="cf_name" data-i18n="cf.name">Nome</label><input id="cf_name" type="text" class="form-control" data-i18n-placeholder="cf.name.ph" placeholder="Il tuo nome" required aria-required="true" autocomplete="name"></div>
         <div class="mb-3"><label class="form-label" for="cf_email" data-i18n="cf.email">Email</label><input id="cf_email" type="email" class="form-control" placeholder="stapanealessandro@gmail.com" required aria-required="true" autocomplete="email"></div>
         <div class="mb-3"><label class="form-label" for="cf_message" data-i18n="cf.msg">Messaggio</label><textarea id="cf_message" class="form-control" data-i18n-placeholder="cf.msg.ph" placeholder="Di cosa vuoi parlarmi?" required aria-required="true"></textarea></div>
+        <div class="mb-3 form-check" style="margin-top:.5rem;">
+          <input type="checkbox" class="form-check-input" id="cf_privacy" aria-required="true">
+          <label class="form-check-label" for="cf_privacy" style="font-size:13px;color:var(--text-muted-custom);">Accetto il trattamento dei dati personali secondo la <a href="privacy-policy.html" target="_blank" rel="noopener noreferrer" style="color:var(--amber);text-decoration:underline;">Privacy Policy</a></label>
+        </div>
         <button type="button" class="btn btn-amber" id="send-btn" onclick="handleSend()" data-i18n="cf.send">Invia messaggio</button>
       </div>
     </div>
@@ -551,7 +555,8 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© <span id="footer-year">2025</span> Alessandro Stapane — Galatone → Empoli 🇮🇹</span>
+      <span>© <span id="footer-year">2026</span> Alessandro Stapane · <a href="mailto:stapanealessandro@gmail.com" style="color:var(--text-dim);text-decoration:none;" onmouseover="this.style.color='#f0a500'" onmouseout="this.style.color=''">stapanealessandro@gmail.com</a></span>
+      <a href="privacy-policy.html" style="color:var(--text-dim);font-size:11px;letter-spacing:.05em;text-decoration:none;font-family:'JetBrains Mono',monospace;" onmouseover="this.style.color='#f0a500'" onmouseout="this.style.color=''">Privacy Policy</a>
       <div class="footer-status"><span class="footer-status-dot" aria-hidden="true"></span>Disponibile per nuove opportunità</div>
       <span style="font-family:'Fira Code',monospace;">&lt;AS /&gt;</span>
     </div>

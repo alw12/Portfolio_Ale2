@@ -167,6 +167,14 @@ async function handleSend() {
     setTimeout(()=>{ btn.innerHTML=T[lang]['cf.send']; btn.style.background=''; if(errEl)errEl.textContent=''; },2500);
     return;
   }
+  const privacy = document.getElementById('cf_privacy');
+  if(!privacy || !privacy.checked) {
+    const errEl = document.getElementById('form-error');
+    if(errEl) errEl.textContent = 'Accetta la privacy policy per procedere.';
+    btn.textContent = '⚠ Accetta la privacy policy'; btn.style.background='#f38ba8';
+    setTimeout(()=>{ btn.innerHTML=T[lang]['cf.send']; btn.style.background=''; if(errEl)errEl.textContent=''; },2500);
+    return;
+  }
   btn.textContent = '⏳ Invio...'; btn.disabled = true;
   try {
     if(window.emailjs && EMAILJS_SERVICE_ID !== 'YOUR_SERVICE_ID') {
