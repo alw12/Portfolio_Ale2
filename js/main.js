@@ -29,7 +29,10 @@
 
   const BOOT_MS = 1800;
   const splashEl = document.getElementById('splash');
-  function hideSplash() { if(splashEl) splashEl.classList.add('hidden'); }
+  function hideSplash() {
+    if(splashEl) splashEl.classList.add('hidden');
+    setTimeout(startTypewriter, 200);
+  }
   const splashFailsafe = setTimeout(hideSplash, 2500);
   window.addEventListener('load', () => {
     const remaining = Math.max(0, BOOT_MS - performance.now());
@@ -147,8 +150,15 @@ function scramble(el){const o=el.innerText;let f=0;const t=setInterval(()=>{el.i
 const scObs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){scramble(x.target);scObs.unobserve(x.target);}}),{threshold:.5});
 document.querySelectorAll('.section-title').forEach(e=>scObs.observe(e));
 
-// Typewriter
-window.addEventListener('load',()=>{setTimeout(()=>{const t=document.getElementById('typeTarget');if(t){const o=t.textContent;t.textContent='';let i=0;const ti=setInterval(()=>{t.textContent+=o[i++];if(i>=o.length)clearInterval(ti);},90);}},900);});
+// Typewriter — chiamato da hideSplash() dopo la scomparsa dello splash
+function startTypewriter() {
+  const t = document.getElementById('typeTarget');
+  if(!t) return;
+  const o = t.textContent;
+  t.textContent = '';
+  let i = 0;
+  const ti = setInterval(() => { t.textContent += o[i++]; if(i >= o.length) clearInterval(ti); }, 90);
+}
 
 
 // EmailJS — configura su emailjs.com (gratuito)
