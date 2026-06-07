@@ -62,7 +62,7 @@ window.addEventListener('scroll',()=>{
   btn.classList.toggle('visible', window.scrollY > 400);
 
   // Scroll spy — navbar + side dots
-  const sections = ['hero','about','skills','projects','experience','certifications','terminal-section','contact'];
+  const sections = ['hero','about','skills','tools','projects','experience','certifications','terminal-section','contact'];
   let current = 'hero';
   sections.forEach(id => {
     const el = document.getElementById(id);
@@ -149,6 +149,26 @@ const sc='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%&';
 function scramble(el){const o=el.innerText;let f=0;const t=setInterval(()=>{el.innerText=o.split('').map((c,i)=>{if(c===' '||c==='\n')return c;if(i<(f/22)*o.length)return c;return sc[Math.floor(Math.random()*sc.length)];}).join('');if(++f>22){el.innerText=o;clearInterval(t);}},40);}
 const scObs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){scramble(x.target);scObs.unobserve(x.target);}}),{threshold:.5});
 document.querySelectorAll('.section-title').forEach(e=>scObs.observe(e));
+
+// Days I code counter
+(function(){
+  const el = document.getElementById('daysCount');
+  if(!el) return;
+  const days = Math.floor((new Date() - new Date('2021-11-01')) / 86400000);
+  const obs = new IntersectionObserver((entries, o) => {
+    entries.forEach(e => {
+      if(!e.isIntersecting) return;
+      let n = 0; const inc = days / (1000/16);
+      const t = setInterval(() => {
+        n += inc;
+        if(n >= days) { el.textContent = days+'+'; clearInterval(t); }
+        else el.textContent = Math.floor(n)+'+';
+      }, 16);
+      o.unobserve(e.target);
+    });
+  }, { threshold: .5 });
+  obs.observe(el);
+})();
 
 // Typewriter — chiamato da hideSplash() dopo la scomparsa dello splash
 function startTypewriter() {

@@ -26,6 +26,7 @@ const T = {
     "contact.label":"Parliamo","contact.title":"Scrivimi.","contact.desc":"Disponibile per opportunità in sede a Lecce, ibrido o full remote. Aperto a progetti freelance e collaborazioni.",
     "cf.name":"Nome","cf.name.ph":"Il tuo nome","cf.email":"Email","cf.msg":"Messaggio","cf.msg.ph":"Di cosa vuoi parlarmi?","cf.send":"Invia messaggio","cf.sent":"✓ Inviato!",
     "toast.title":"✓ Messaggio inviato","toast.body":"Grazie! Ti risponderò il prima possibile.",
+    "tools.label":"Strumenti","tools.title":"Tools I use &amp;<br>Days I code.","tool.cat.vcs":"Version Control","tools.stat1":"Giorni a programmare","tools.stat2":"Anni professionali","tools.stat3":"Tool nel workflow",
     "footer":"Galatone → Empoli · Full Stack Developer"
   },
   en:{
@@ -55,6 +56,7 @@ const T = {
     "contact.label":"Let's talk","contact.title":"Get in touch.","contact.desc":"Available for on-site in Lecce, hybrid or full remote. Open to freelance projects and collaborations.",
     "cf.name":"Name","cf.name.ph":"Your name","cf.email":"Email","cf.msg":"Message","cf.msg.ph":"What's on your mind?","cf.send":"Send message","cf.sent":"✓ Sent!",
     "toast.title":"✓ Message sent","toast.body":"Thanks! I'll get back to you ASAP.",
+    "tools.label":"Toolbox","tools.title":"Tools I use &amp;<br>Days I code.","tool.cat.vcs":"Version Control","tools.stat1":"Days coding","tools.stat2":"Professional years","tools.stat3":"Tools in workflow",
     "footer":"Galatone → Empoli · Full Stack Developer"
   },
   zh:{
@@ -84,6 +86,7 @@ const T = {
     "contact.label":"联系我","contact.title":"保持联系。","contact.desc":"欢迎莱切在岗、混合或全远程机会，接受自由职业项目和合作。",
     "cf.name":"姓名","cf.name.ph":"您的姓名","cf.email":"邮箱","cf.msg":"留言","cf.msg.ph":"您想聊些什么？","cf.send":"发送消息","cf.sent":"✓ 已发送！",
     "toast.title":"✓ 消息已发送","toast.body":"谢谢！我会尽快回复您。",
+    "tools.label":"工具箱","tools.title":"常用工具 &amp;<br>编程天数。","tool.cat.vcs":"版本控制","tools.stat1":"编程天数","tools.stat2":"职业年数","tools.stat3":"工作流工具数",
     "footer":"加拉托内 → 恩波利 · 全栈开发工程师"
   }
 };
