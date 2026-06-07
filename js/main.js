@@ -377,3 +377,29 @@ document.querySelectorAll('.lang-card').forEach(c=>langObs.observe(c));
   else init();
 })();
 
+// Cookie consent banner
+(function(){
+  const KEY = 'as_cookie_consent';
+  const banner = document.getElementById('cookie-banner');
+  if(!banner || localStorage.getItem(KEY)) return;
+
+  function showBanner(){
+    banner.style.display = 'block';
+    requestAnimationFrame(() => requestAnimationFrame(() => banner.classList.add('cookie-visible')));
+  }
+
+  function hideBanner(choice){
+    banner.classList.remove('cookie-visible');
+    setTimeout(() => { banner.style.display = 'none'; }, 420);
+    try { localStorage.setItem(KEY, choice); } catch(e){}
+  }
+
+  const btnAccept = document.getElementById('cookie-accept');
+  const btnReject = document.getElementById('cookie-reject');
+  if(btnAccept) btnAccept.addEventListener('click', () => hideBanner('all'));
+  if(btnReject) btnReject.addEventListener('click', () => hideBanner('necessary'));
+
+  // Show after splash completes (1800ms) + small buffer
+  setTimeout(showBanner, 2100);
+})();
+
